@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Alien Abductions</title>
+<title>theSupernatural</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 <body>
@@ -19,15 +19,18 @@ include('header.html');
 				
 					<!-- CONTENT -->
 					<h3>Welcome!</h3>
-					<p>Welcome to the Alien Abduction Research Center of the University of Mary Washington. </p>
+					<p>BlahBlahBLah more text.</p>
 					
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+					<p>ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIES
+						LEPRECHAUNS LEPRECHAUNS LEPRECHAUNSLEPRECHAUNS LEPRECHAUNS LEPRECHAUNS v LEPRECHAUNS LEPRECHAUNS LEPRECHAUNS LEPRECHAUNS LEPRECHAUNSLEPRECHAUNS LEPRECHAUNSLEPRECHAUNS LEPRECHAUNS LEPRECHAUNS LEPRECHAUNSLEPRECHAUNS
+						UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS 
+						PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS?PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS?</p>
 					
-					<img src="images/ufo_003.jpg" />
+					<img src="images/zombie.jpg" />
 		
                      <p>&nbsp;</p>
 					<h3>About Us</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+					<p>BlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more text</p>
 										
 					<!-- END CONTENT -->
 					
