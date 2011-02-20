@@ -1,17 +1,33 @@
-
+<html>
+<head>
+<link rel="icon" type="image/ico" href="images/favicon.ico"> 
+</head>
+<body>
 
 <div class="header">
+
+	<div class="title">
+		<div class="innertitle">
+			
+			<!-- TITLE -->
+			<h1><a href="index.php">theSupernatural</a></h1>
+			<h2>worldwide site of supernatural invasions </h2>
+
+			<!-- END TITLE -->
+			
+		</div>
+	</div>
+
 	<div class="outernav">
 		<div class="nav">
 			<div class="innernav">
 				<ul>
 				
 					<!-- MENU -->
+					<li><img src="images/spntattoowhite.png" width=50px /></li>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="report.php">Report an Sighting</a></li>
 					<li><a href="list.php">See List of Sightings</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
 					
 					<?php
 					
@@ -32,18 +48,11 @@
 			</div>
 		</div>
 	</div>
-		
-	<div class="clear"></div>
 	
-	<div class="title">
-		<div class="innertitle">
-			
-			<!-- TITLE -->
-			<h1><a href="#">theSupernatural</a></h1>
-			<h2>worldwide site of supernatural invasions </h2>
 
-			<!-- END TITLE -->
-			
-		</div>
-	</div>
+
+
 </div>
+
+</body>
+</html>
