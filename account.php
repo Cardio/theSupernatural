@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,17 +23,8 @@ include('header.php');
 				
 					<!-- CONTENT -->
 
-  <h3>Create Account</h3>
-  <form method="post" action="createAccount.php">
-    
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" /><br />
-    <label for="pw">Password:</label>
-    <input type="password" id="pw" name="pw" /><br />
-    <label for="zip">Zipcode:</label>
-    <input type="text" id="zip" name="zip" /><br />
-    <input type="submit" value="Create Account" name="submit" />
-  </form>
+  <h3>Account Settings</h3>
+
 										
 					<!-- END CONTENT -->
 					
