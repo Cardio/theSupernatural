@@ -28,7 +28,7 @@ include('header.php');
     
     <input type="submit" value="Login" name="submit" />
   </form>
-  <p><a href="createAccount.html">Create Account</a></p>
+  <p><a href="register.php">Create Account</a></p>
 										
 					<!-- END CONTENT -->
 					
