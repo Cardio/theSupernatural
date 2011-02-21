@@ -20,6 +20,10 @@ div#wrap {
 
 
 /* header & nav */
+div.banner {
+	position:relative;
+	top:4px;
+}
 div.header {
 	margin:0 auto;
 }
@@ -29,7 +33,7 @@ div.nav {
 	background:#5E008D url('images/navbgright.jpg') no-repeat scroll bottom right;
 }
 div.title {
-	padding:20px 20px;
+//	padding:20px 20px;
 	margin:0 auto; 
 	background:#600000;
 }

@@ -8,13 +8,12 @@
 
 	<div class="title">
 		<div class="innertitle">
-			
+			<div class="banner">
 			<!-- TITLE -->
-			<h1><a href="index.php">theSupernatural</a></h1>
-			<h2>worldwide site of supernatural invasions </h2>
+<a href="index.php"><img src="images/header1.png" /></a>
 
 			<!-- END TITLE -->
-			
+			</div>
 		</div>
 	</div>
 
