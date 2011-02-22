@@ -10,7 +10,7 @@
 		<div class="innertitle">
 			<div class="banner">
 			<!-- TITLE -->
-<a href="index.php"><img src="images/header1.png" border="0" /></a>
+<a href="index.php"><img src="images/spnHeader.png" /></a>
 
 			<!-- END TITLE -->
 			</div>
@@ -23,7 +23,6 @@
 				<ul>
 				
 					<!-- MENU -->
-					<li><img src="images/spntattoowhite.png" width=50px /></li>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="report.php">Report an Sighting</a></li>
 					<li><a href="list.php">See List of Sightings</a></li>
