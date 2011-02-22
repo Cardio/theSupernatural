@@ -10,7 +10,7 @@
 		<div class="innertitle">
 			<div class="banner">
 			<!-- TITLE -->
-<a href="index.php"><img src="images/spnHeader.png" /></a>
+<a href="index.php"><img src="images/spnHeader.png" border="0" /></a>
 
 			<!-- END TITLE -->
 			</div>
