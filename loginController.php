@@ -9,14 +9,14 @@ session_start();
    $result = mysqli_query($db, $query);
    if ($row = mysqli_fetch_array($result))
    {
-   		$_SESSION['zip'] = $row['zipcode'];
-   		$_SESSION ['username'] = $name;
-   		$_SESSION ['pw'] = $pw;
+		setcookie('id',$row['id'],time()+60*60*24*30);
+		mysqli_close($db);
    		header( 'Location: index.php');
    		exit;
    }
    else
     {
+		mysqli_close($db);
     	header( 'Location: login.php?error=wrong');
     	exit;
     }

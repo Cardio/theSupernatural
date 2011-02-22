@@ -13,12 +13,9 @@ $query= "INSERT INTO users (id, username, password) VALUES(NULL, '$username', SH
 $result = mysqli_query($db, $query)
 or die("Error Querying Database");
 
-$_SESSION['username'] = $username;
-$_SESSION['pw'] = $pw;
-
 mysqli_close($db);
 
-header( 'Location: index.php');
+header( 'Location: login.php?msg=reg');
 exit;
 
 } else {

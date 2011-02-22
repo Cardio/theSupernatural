@@ -20,6 +20,16 @@ include('header.php');
 					<!-- CONTENT -->
 
   <h3>Log In</h3>
+
+<?php
+	if($_GET['msg'] == 'reg') {
+		echo "Thank you for registering, please login.";
+	}
+	if($_GET['error'] == 'wrong') {
+		echo "Incorrect username or password.";
+	}
+?>
+
   <form method="post" action="loginController.php">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" /><br />

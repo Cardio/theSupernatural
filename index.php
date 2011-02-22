@@ -28,7 +28,7 @@ include('header.php');
 				echo $_SESSION['username'];
 			} else {
 				echo "guest";
-			}
+			}			
 			?>!</h3>
 					<p>BlahBlahBLah more text.</p>
 					

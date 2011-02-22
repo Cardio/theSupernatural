@@ -23,6 +23,8 @@ div#wrap {
 div.banner {
 	position:relative;
 	top:4px;
+	margin:0 auto;
+
 }
 div.header {
 	margin:0 auto;
