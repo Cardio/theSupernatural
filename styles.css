@@ -18,6 +18,7 @@ div#wrap {
 	padding:0 10px;
 }
 
+
 /* errer messages */
 div.error {
 	color:red;
@@ -25,8 +26,9 @@ div.error {
 
 /* header & nav */
 div.banner {
-	position:relative;
-	top:4px;
+//	position:relative;
+//	top:4px;
+	height:150px;
 	margin:0 auto;
 
 }
@@ -39,7 +41,7 @@ div.nav {
 	background:#5E008D url('images/navbgright.jpg') no-repeat scroll bottom right;
 }
 div.title {
-//	padding:20px 20px;
+	//adding:20px 20px;
 	margin:0 auto; 
 	background:#600000;
 }
@@ -119,7 +121,7 @@ h4 {
 
 /* element defaults */
 p {
-	margin-bottom:20px;
+	margin-bottom:102x;
 	line-height:1.7em;
 
 	font-size:0.95em;	color:#333333;

@@ -15,6 +15,8 @@ session_start();
 include('header.php');
 ?>
 
+<div class="up">
+
 <div id="wrap">
 	<div class="pagewrapper">
 		<div class="innerpagewrapper">
@@ -54,6 +56,7 @@ include('SIDEnFOOTER.html');
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 </body>
 </html>
