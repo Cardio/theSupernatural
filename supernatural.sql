@@ -41,3 +41,17 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'taco', '9dc4319c27f6479adc842ebef4a324a40759b95c');
+
+
+CREATE TABLE IF NOT EXISTS `sightings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL default 'John Doe',
+  `date` DATE NOT NULL,
+  `city` varchar(20) NOT NULL default 'Not Listed',
+  `state` varchar(2) NOT NULL,
+  `experience` blob NOT NULL,
+  `creature_type` varchar(20) NOT NULL,
+  `action` blob NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+>>>>>>> 678024d131508898efa9b0760fa8fa254cf15d67

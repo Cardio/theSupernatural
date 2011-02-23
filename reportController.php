@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Alien Abductions</title>
+<title>Supernatural Sightings</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -26,17 +26,22 @@ $name = $_POST['name'];
 $month = $_POST['month'];
 $day = $_POST['day'];
 $yr = $_POST['year'];
-$location = $_POST['city'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$exp = $_POST['exp'];
+$ctype = $_POST['creature'];
+$act = $_POST['action'];
+
 
 echo "Report Summary: <br/>";
 echo "Name: $name <br/>";
 echo "Date: $month / $day / $yr <br/>";
-echo "The rest is on file. Thank you.";
-$query="INSERT INTO alien (name) VALUES ('$name')";
-$query2="SELECT * FROM alien";
+echo "The rest is on file. Thank you.<br/>";
+//$query="INSERT INTO sightings (name,city,state,experience,creature_type,action) VALUES ('$name','$city','$state','$exp,'$ctype','$act')";
+//$query2="SELECT * FROM sigthings";
 
-$result = mysqli_query($db, $query) or die("Error Querying Database");
-mysqli_close($db);
+//$result = mysqli_query($db, $query) or die("Error Querying Database");
+//mysqli_close($db);
 ?>
 
 </div>
