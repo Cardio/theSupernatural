@@ -52,7 +52,6 @@ include('cookie.php');
 	
 
 
-
 </div>
 
 </body>
