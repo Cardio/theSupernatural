@@ -48,11 +48,11 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE IF NOT EXISTS `sightings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL default 'John Doe',
-  `city` varchar(20) NOT NULL default 'Not Listed',
+  `name` varchar(50) NOT NULL default 'John Doe',
+  `city` varchar(50) NOT NULL default 'Not Listed',
   `state` varchar(2) NOT NULL,
   `experience` blob NOT NULL,
-  `creature_type` varchar(20) NOT NULL,
+  `creature_type` varchar(25) NOT NULL,
   `action` blob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,7 +25,7 @@
 <?php
 
 include ('db_connect.php');
-$name = $_POST['name'];
+$name = $_SESSION['username'];
 $month = $_POST['month'];
 $day = $_POST['day'];
 $yr = $_POST['year'];

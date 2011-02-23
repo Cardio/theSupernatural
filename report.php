@@ -30,7 +30,7 @@ session_start();
 					
 					<form method="post" action="reportController.php">
 					<table>
-					<tr><td>Name</td><td><input type="name" name="name" value=<?php echo($_SESSION['username']); ?> /></td></tr>
+					<tr><td>Name</td><td><?php echo($_SESSION['username']); ?></td></tr>
 					<tr><td>Date of Sighting</td><td><input type="number" name="month" min="1" max="12" step="1" value="1" size="3"/>
 					<input type="number" name="day" min="1" max="31" step="1" value="1" size="3"/>
 					<input type="number" name="year" min="2009" max="2014" step="1" value="2011" size="4"/></td></tr>

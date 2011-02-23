@@ -30,7 +30,7 @@ session_start();
 <?php	
 include ('db_connect.php');		
 
-$query = "SELECT * FROM sightings ORDER BY id DESC";
+$query = "SELECT * FROM sightings ORDER BY id ASC";
  	
   
 $result = mysqli_query($db, $query)or die("Error Querying Database");
