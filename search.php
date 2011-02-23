@@ -27,13 +27,24 @@ session_start();
 
 		
 <?php
-$name = $_POST['name'];	
-$query="SELECT * FROM alien WHERE name LIKE '%$name%'";
-	
+include('db_connect.php');
+
+$name = $_POST['q'];	
+$query="SELECT * FROM sightings WHERE name LIKE '%$name%' OR date LIKE '%$name%'
+		OR city LIKE '%$name%' OR state LIKE '%$name%' OR creature_type LIKE '%$name%'";
+//$query="SELECT * FROM sightings WHERE creature_type LIKE '%$name%'";
+
+$result=mysqli_query($db, $query)
+or die("Error Querying Database");	
+	echo"<table>";
 while($row= mysqli_fetch_array($result)){
-$name=$row['name'];
-echo "<tr><td>'$name'</td></tr>\n";
+//$name=$row['name'];
+
+    echo"<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['city'] . "</td><td>" . $row['state'] . "</td><td>" . $row['experience'] . "</td><td>" . $row['creature_type'] . "</td><td>" . $row['action'] . "</td></tr>";
+    
+//echo "<tr><td>'$name'</td></tr>\n";
 }	
+echo"</table>";
 ?>
 
 
