@@ -41,7 +41,7 @@ include('header.php');
                      <p>&nbsp;</p>
 					<h3>About Us</h3>
 					<p>BlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more text</p>
-				<iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/7AwD5nl-I7E" frameborder="0" allowfullscreen></iframe>
+				<iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/BvsMPOfblfg" frameborder="0" allowfullscreen></iframe>
 					<!-- END CONTENT -->
 					
 				</div>
