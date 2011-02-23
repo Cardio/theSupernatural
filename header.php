@@ -28,8 +28,7 @@ include('cookie.php');
 				
 					<!-- MENU -->
 					<li><a href="index.php">Home</a></li>
-					<li><a href="report.php">Report an Sighting</a></li>
-					<li><a href="list.php">See List of Sightings</a></li>
+					<li><a href="list.php">List of Sightings</a></li>
 					
 					<?php
 					
