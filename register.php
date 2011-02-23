@@ -20,6 +20,15 @@ include('header.php');
 					<!-- CONTENT -->
 
   <h3>Create Account</h3>
+  <?php
+  if($_GET['error']=='nameTaken') {
+  	echo "<div class=\"error\" >Username already taken, please select another one.</div>";
+  } else {
+  	if($_GET['error']=='wrongPass') {
+  		echo "<div class=\"error\" >The passwords you entered did not match.</div>";
+  	}
+  }
+  ?>
   <form method="post" action="registerController.php">
     
     <label for="username">Type Username:</label>

@@ -39,7 +39,5 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `zipcode`) VALUES
-(1, 'raz', 'p00d13', 88005),
-(2, 'ann', 'changeme', 22401),
-(3, 'lazy', 'qwerty', 22401);
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'taco', '9dc4319c27f6479adc842ebef4a324a40759b95c');

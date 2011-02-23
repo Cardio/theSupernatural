@@ -18,6 +18,10 @@ div#wrap {
 	padding:0 10px;
 }
 
+/* errer messages */
+div.error {
+	color:red;
+}
 
 /* header & nav */
 div.banner {
@@ -181,11 +185,11 @@ a:hover {
 /* centeral page */
 div.pagewrapper {
 	margin:0 auto;
-	background:#ffffff url('images/content-bg-right.png') no-repeat scroll top right;
+	background:#ffffff url('images/content-bg-right2.png') no-repeat scroll top right;
 	
 }
 div.innerpagewrapper {
-	background:#ffffff url('images/content-bg-left.png') no-repeat scroll top left;
+	background:#ffffff url('images/content-bg-left2.png') no-repeat scroll top left;
 	margin:0 11px 0 0;
 }
 div.page {

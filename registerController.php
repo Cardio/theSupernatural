@@ -2,15 +2,20 @@
 session_start();
 
 include('db_connect.php');
-$username = $_POST['username'];
-$pw = $_POST['pw'];
-$pw2 = $_POST['pw2'];
+$username = mysqli_real_escape_string($db, trim($_POST['username']));
+$pw = mysqli_real_escape_string($db, trim($_POST['pw']));
+$pw2 = mysqli_real_escape_string($db, trim($_POST['pw2']));
 
-
-
+   $query = "select * from users WHERE username = '$username' ";
+   $result = mysqli_query($db, $query);
+   if ($row = mysqli_fetch_array($result)) {
+   	header('Location: register.php?error=nameTaken');
+   	exit;
+   }
+   
 if($pw == $pw2) {
-$query= "INSERT INTO users (id, username, password) VALUES(NULL, '$username', SHA('$pw'))";
-$result = mysqli_query($db, $query)
+$query2= "INSERT INTO users (id, username, password) VALUES(NULL, '$username', SHA('$pw'))";
+$result2 = mysqli_query($db, $query2)
 or die("Error Querying Database");
 
 mysqli_close($db);
@@ -20,5 +25,6 @@ exit;
 
 } else {
 	header('Location: register.php?error=wrongPass');
+	exit;
 }
 ?>
