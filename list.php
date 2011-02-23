@@ -27,12 +27,21 @@ session_start();
 					<h3>Current Sightings</h3>
 			
 
-<?php			
-//$query = "SELECT * FROM sightings ORDER BY id DESC";
-		
+<?php	
+include ('db_connect.php');		
+
+$query = "SELECT * FROM sightings ORDER BY id DESC";
+ 	
   
-//$result = mysqli_query($db, $query)
-   //	or die("Error Querying Database");
+$result = mysqli_query($db, $query)or die("Error Querying Database");
+   
+echo"<table>";
+   while($row = mysqli_fetch_array($result))
+    {
+    echo"<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['city'] . "</td><td>" . $row['state'] . "</td><td>" . $row['experience'] . "</td><td>" . $row['creature_type'] . "</td><td>" . $row['action'] . "</td></tr>";
+    }
+echo "</table>";
+mysqli_close($db);
 	
 ?>	
 	
