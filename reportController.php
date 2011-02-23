@@ -37,11 +37,12 @@ echo "Report Summary: <br/>";
 echo "Name: $name <br/>";
 echo "Date: $month / $day / $yr <br/>";
 echo "The rest is on file. Thank you.<br/>";
-//$query="INSERT INTO sightings (name,city,state,experience,creature_type,action) VALUES ('$name','$city','$state','$exp,'$ctype','$act')";
+
+$query="INSERT INTO sightings (name,city,state,experience,creature_type,action) VALUES ('$name','$city','$state','$exp,'$ctype','$act')";
 //$query2="SELECT * FROM sigthings";
 
-//$result = mysqli_query($db, $query) or die("Error Querying Database");
-//mysqli_close($db);
+$result = mysqli_query($db, $query) or die("Error Querying Database");
+   mysqli_close($db);
 ?>
 
 </div>
