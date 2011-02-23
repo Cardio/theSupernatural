@@ -169,9 +169,6 @@ table tr th {
 	background:#5E008D url('images/navbg.jpg') repeat-x scroll bottom left;
 	color:#ffffff;
 }
-table tr td {
-	border-bottom:1px solid #dddddd;
-}
 
 
 /* default links */
@@ -179,7 +176,7 @@ a {
 	color:#600000 ;
 }
 a:visited { 
-	color:#51007A;
+	color:#000000 ;
 } 
 a:hover { 
 	color:#000000; 
