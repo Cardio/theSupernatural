@@ -28,11 +28,11 @@ session_start();
 			
 
 <?php			
-$query = "SELECT * FROM sightings ORDER BY id DESC";
+//$query = "SELECT * FROM sightings ORDER BY id DESC";
 		
   
-$result = mysqli_query($db, $query)
-   	or die("Error Querying Database");
+//$result = mysqli_query($db, $query)
+   //	or die("Error Querying Database");
 	
 ?>	
 	
