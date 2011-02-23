@@ -38,7 +38,12 @@ $result = mysqli_query($db, $query)or die("Error Querying Database");
 echo"<table>";
    while($row = mysqli_fetch_array($result))
     {
-    echo"<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['city'] . "</td><td>" . $row['state'] . "</td><td>" . $row['experience'] . "</td><td>" . $row['creature_type'] . "</td><td>" . $row['action'] . "</td></tr>";
+	
+    echo "<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['date'] . "</td><td>" . $row['city'] . "</td><td>" . $row['state'] . "</td><td>" . $row['creature_type'] . "</td></tr>";
+	echo "<tr><td></td><td>Experience:</td><td colspan=4>";
+	echo wordwrap($row['experience'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "<tr><td></td><td>Actions:</td><td colspan=4>";
+	echo wordwrap($row['action'] . "</td></tr>",50,"<br />\n",TRUE);
     }
 echo "</table>";
 mysqli_close($db);

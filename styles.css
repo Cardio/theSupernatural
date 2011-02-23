@@ -8,6 +8,7 @@ body {
 	padding:0;
 	font-family:Arial, Helvetica, sans-serif;
 	width: 1000px;
+
 }
 
 
@@ -162,6 +163,7 @@ table {
 }
 table tr th, table tr td {
 	padding:5px 10px; 
+
 }
 table tr th {
 	background:#5E008D url('images/navbg.jpg') repeat-x scroll bottom left;
