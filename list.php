@@ -24,6 +24,11 @@ session_start();
 				<div class="content">
 				
 					<!-- CONTENT -->
+					<?php
+					if($_GET['submit']=='y'){
+					echo "<p>Your sighting has been submitted successfully!</p>";
+					}
+					?>
 					<h3>Current Sightings</h3>
 			
 
@@ -46,13 +51,16 @@ echo"<table>";
 	echo wordwrap($row['action'] . "</td></tr>",50,"<br />\n",TRUE);
     }
 echo "</table>";
+
 mysqli_close($db);
 	
 ?>	
-	
+						<center>
 						<form method="post" action="report.php">
 					    <input type="submit" value="Report A Sighting" />
 					    </form>
+						</center>
+						<br/>
 					<!-- END CONTENT -->
 					
 				</div>
