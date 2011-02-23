@@ -42,6 +42,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'taco', '9dc4319c27f6479adc842ebef4a324a40759b95c');
 
+--
+-- Table structure for table `sightings`
+--
 
 CREATE TABLE IF NOT EXISTS `sightings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -54,4 +57,4 @@ CREATE TABLE IF NOT EXISTS `sightings` (
   `action` blob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
->>>>>>> 678024d131508898efa9b0760fa8fa254cf15d67
+
