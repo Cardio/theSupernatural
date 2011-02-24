@@ -19,6 +19,7 @@ $result=mysqli_query($db, $query);
 $row=mysqli_fetch_array($result);
 $zip=$row['zipcode'];
 $username=$row['username'];
+$pic=$row['pic'];
 mysqli_close($db);
 
 
@@ -31,6 +32,9 @@ mysqli_close($db);
 					<!-- CONTENT -->
 <h3><?php echo "$username"; ?>'s Profile</h3>
 <br/>
+<div class="leftimg">
+<img src="userInfo/<?php echo $pic ?>" width="100px" >
+</div>
 <p>Zip Code: <?php echo "$zip"; ?></p>
 <p>Bio: //put a short bio here, but add it to the table first</p>
 <p>More info, maybe a picture, the type of things they hunt, reports, etc.</p>

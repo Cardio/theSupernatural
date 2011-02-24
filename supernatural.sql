@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(12) NOT NULL,
   `password` varchar(50) NOT NULL,
   `zipcode` int(11) NOT NULL,
+  `pic` varchar(50) NOT NULL default 'default.gif',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
