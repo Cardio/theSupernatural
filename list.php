@@ -44,12 +44,12 @@ echo"<br/><hr/>";
    while($row = mysqli_fetch_array($result))
     {
 	echo"<table>";
-    echo "<tr><td>Name: " . $row['name'] . "</td><td>Date:" . $row['date'] . "</td></tr>";
+    echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\">Date:" . $row['date'] . "</td></tr>";
 	echo "<tr><td>City:" . $row['city'] . "</td><td>State:" . $row['state'] . "</td></tr>";
 	echo "<tr><td>Creature Type:" . $row['creature_type'] . "</td></tr>";
-	echo "<tr><td>Experience:</td><td colspan=4>";
+	echo "<tr><td>Experience:</td><td>";
 	echo wordwrap($row['experience'] . "</td></tr>",50,"<br />\n",TRUE);
-	echo "<tr><td>Actions:</td><td colspan=4>";
+	echo "<tr><td>Actions:</td><td>";
 	echo wordwrap($row['action'] . "</td></tr>",50,"<br />\n",TRUE);
 	echo "</table>";
 	echo"<hr/>";

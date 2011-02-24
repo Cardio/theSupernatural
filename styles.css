@@ -19,8 +19,25 @@ div#wrap {
 	padding:0 10px;
 }
 
+/* image left float */
+div.leftimg {
+	float:left;
+	margin:5px;
+}
 
-/* errer messages */
+/* image right float */
+div.rightimg {
+	float:right;
+	margin:5px;
+}
+
+/* image center float */
+div.centerimg {
+	margin:0 auto;
+	padding:5px;
+}
+
+/* error messages */
 div.error {
 	color:red;
 }
