@@ -43,7 +43,6 @@ session_start();
 					<select name="state">
 					<option>AL</option>
 					<option>AK</option>
-					<option>AS</option>
 					<option>AZ</option>
 					<option>AR</option>
 					<option>CA</option>
@@ -51,10 +50,8 @@ session_start();
 					<option>CT</option>
 					<option>DE</option>
 					<option>DC</option>
-					<option>FM</option>
 					<option>FL</option>
 					<option>GA</option>
-					<option>GU</option>
 					<option>HI</option>
 					<option>ID</option>
 					<option>IL</option>
@@ -64,7 +61,6 @@ session_start();
 					<option>KY</option>
 					<option>LA</option>
 					<option>ME</option>
-					<option>MH</option>
 					<option>MD</option>
 					<option>MA</option>
 					<option>MI</option>
@@ -80,13 +76,10 @@ session_start();
 					<option>NY</option>
 					<option>NC</option>
 					<option>ND</option>
-					<option>MP</option>
 					<option>OH</option>
 					<option>OK</option>
 					<option>OR</option>
-					<option>PW</option>
 					<option>PA</option>
-					<option>PR</option>
 					<option>RI</option>
 					<option>SC</option>
 					<option>SD</option>
@@ -94,7 +87,6 @@ session_start();
 					<option>TX</option>
 					<option>UT</option>
 					<option>VT</option>
-					<option>VI</option>
 					<option>VA</option>
 					<option>WA</option>
 					<option>WV</option>
