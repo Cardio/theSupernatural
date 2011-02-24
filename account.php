@@ -24,7 +24,20 @@ include('header.php');
 					<!-- CONTENT -->
 
   <h3>Account Settings</h3>
-
+<br/>
+<p>Change your password here:<br/></p>
+<form action="pwChangeController.php" method="post">
+<p>New Password: <input type="password" name="pw1" /></p>
+<p>Retype New Password: <input type="password" name="pw2" /></p>
+<p><input type="submit" value="Change Password" /></p>
+</form>
+<br/>
+<p>Edit your account info here:<br/></p>
+<form action="infoChangeController.php" method="post">
+<p>Change your zip code: <input type="text" name="zip" /></p>
+<p>Other stuff will come later.</p>
+<p><input type="submit" value="Edit Account Info" /></p>
+</form>
 										
 					<!-- END CONTENT -->
 					
@@ -40,3 +53,5 @@ include('SIDEnFOOTER.html');
 </div>
 </body>
 </html>
+
+

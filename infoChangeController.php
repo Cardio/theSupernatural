@@ -6,9 +6,9 @@
   $username=$_SESSION['username'];
   $query="UPDATE users SET zipcode='$zip' WHERE username='$username'";
   $result = mysqli_query($db, $query);
-  echo "How do I redirect?";
-  echo "Your zip: $zip"; 
-  echo "Your username: $username";
-  mysqli_close($db);
+  mysqli_close($db);  
+  header( 'Location: index.php');
+  exit;
+
 
 ?>
