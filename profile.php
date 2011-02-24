@@ -9,11 +9,12 @@ session_start();
 </head>
 <body>
 <?php 
-
+include('header.php');
+?>
+<?php
 include ('db_connect.php');
-include('header.php'); 
 $id=$_GET['id'];
-$query="SELECT * FROM users WHERE id='$id'";
+$query="SELECT * FROM users WHERE id=$id";
 $result=mysqli_query($db, $query);
 $row=mysqli_fetch_array($result);
 $zip=$row['zipcode'];
