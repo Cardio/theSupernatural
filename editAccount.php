@@ -33,6 +33,13 @@ mysqli_close($db);
 					<!-- CONTENT -->
 <h3>Edit Account</h3>
 <p><b>Change Password</b></p>
+<div class="error">
+<?php
+if($_GET['msg']=='passChange') {
+	echo "<p>Password Successfully Changed!<p>";
+}
+?>
+</div>
 <form action="pwChangeController.php" method="post">
 <p>New Password: <input type="password" name="pw1" /></p>
 <p>Retype New Password: <input type="password" name="pw2" /></p>
@@ -40,6 +47,13 @@ mysqli_close($db);
 </form>
 <br/>
 <p><b>Edit Other Settings</b></p>
+<div class="error">
+<?php
+if($_GET['msg']=='infoChange') {
+	echo "<p>Account Info Successfully Changed!<p>";
+}
+?>
+</div>
 <form action="infoChangeController.php" method="post">
 <p>Your current zip code is: <?php echo $zip ?></p>
 <p>Change your zip code: <input type="text" name="zip" /></p>

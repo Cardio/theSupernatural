@@ -36,11 +36,21 @@ $query="SELECT * FROM sightings WHERE name LIKE '%$name%' OR date LIKE '%$name%'
 
 $result=mysqli_query($db, $query)
 or die("Error Querying Database");	
-	echo"<table>";
+	echo "<center><h3>Search for \"" . $name . "\"</h3></center><hr/>";
+	echo "<table>";
 while($row= mysqli_fetch_array($result)){
 //$name=$row['name'];
 
-    echo"<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['city'] . "</td><td>" . $row['state'] . "</td><td>" . $row['experience'] . "</td><td>" . $row['creature_type'] . "</td><td>" . $row['action'] . "</td></tr>";
+	echo"<table>";
+    echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\">Date:" . $row['date'] . "</td></tr>";
+	echo "<tr><td>City:" . $row['city'] . "</td><td>State:" . $row['state'] . "</td></tr>";
+	echo "<tr><td>Creature Type:" . $row['creature_type'] . "</td></tr>";
+	echo "<tr><td>Experience:</td><td>";
+	echo wordwrap($row['experience'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "<tr><td>Actions:</td><td>";
+	echo wordwrap($row['action'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "</table>";
+	echo"<hr/>";
     
 //echo "<tr><td>'$name'</td></tr>\n";
 }	
