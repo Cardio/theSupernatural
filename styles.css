@@ -8,6 +8,7 @@ body {
 	padding:0;
 	font-family:Arial, Helvetica, sans-serif;
 	width: 1000px;
+
 }
 
 
@@ -18,8 +19,25 @@ div#wrap {
 	padding:0 10px;
 }
 
+/* image left float */
+div.leftimg {
+	float:left;
+	margin:5px;
+}
 
-/* errer messages */
+/* image right float */
+div.rightimg {
+	float:right;
+	margin:5px;
+}
+
+/* image center float */
+div.centerimg {
+	margin:0 auto;
+	padding:5px;
+}
+
+/* error messages */
 div.error {
 	color:red;
 }
@@ -162,13 +180,11 @@ table {
 }
 table tr th, table tr td {
 	padding:5px 10px; 
+
 }
 table tr th {
 	background:#5E008D url('images/navbg.jpg') repeat-x scroll bottom left;
 	color:#ffffff;
-}
-table tr td {
-	border-bottom:1px solid #dddddd;
 }
 
 
@@ -177,7 +193,7 @@ a {
 	color:#600000 ;
 }
 a:visited { 
-	color:#51007A;
+	color:#000000 ;
 } 
 a:hover { 
 	color:#000000; 

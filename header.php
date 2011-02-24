@@ -33,7 +33,7 @@ include('cookie.php');
 					<?php
 					
 					if(isset($_SESSION['username'])) {
-						echo "<li><a href=\"account.php\">Account</a></li>
+						echo "<li><a href=\"editAccount.php\">Account</a></li>
 								<li><a href=\"logout.php\">Logout</a></li>";
 					} else {
 						echo "<li><a href=\"register.php\">Register</a></li>

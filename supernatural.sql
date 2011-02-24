@@ -49,6 +49,7 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 CREATE TABLE IF NOT EXISTS `sightings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL default 'John Doe',
+  `date` date NOT NULL,
   `city` varchar(50) NOT NULL default 'Not Listed',
   `state` varchar(2) NOT NULL,
   `experience` blob NOT NULL,

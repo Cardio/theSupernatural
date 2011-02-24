@@ -32,19 +32,19 @@ include('header.php');
 				echo "guest";
 			}			
 			?>!</h3>
-					<p>BlahBlahBLah more text.</p>
 					
-					<p>ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIES ZOMBIESZOMBIES ZOMBIES ZOMBIES
-						LEPRECHAUNS LEPRECHAUNS LEPRECHAUNSLEPRECHAUNS LEPRECHAUNS LEPRECHAUNS v LEPRECHAUNS LEPRECHAUNS LEPRECHAUNS LEPRECHAUNS LEPRECHAUNSLEPRECHAUNS LEPRECHAUNSLEPRECHAUNS LEPRECHAUNS LEPRECHAUNS LEPRECHAUNSLEPRECHAUNS
-						UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS UNICORNS 
-						PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS?PANDAS? PANDAS? PANDAS? PANDAS? PANDAS? PANDAS?</p>
+					<div class="rightimg"><img src="images/zombie.jpg" width=150px /></div>
+
+					<p>This site to is aid supernatural hunters.  We're here to connect you to your fellow hunters so you don't have to hunt each other!</p>
+					<br/>
+					<p>Create an account, report a sighting so other hunters can help you, or see what creatures are running amok that you can go take care of.  Happy hunting!</p>
 					
-					<img src="images/zombie.jpg" />
 		
-                     <p>&nbsp;</p>
-					<h3>About Us</h3>
-					<p>BlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more textBlahBlahBLah more text</p>
-										
+<br/>
+<hr/>
+<br/>
+					
+				<center><iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/BvsMPOfblfg" frameborder="0" allowfullscreen></iframe></center>
 					<!-- END CONTENT -->
 					
 				</div>
