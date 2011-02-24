@@ -1,5 +1,14 @@
 <?php
+
 include('cookie.php');
+
+  include "db_connect.php";
+
+   $query = "select * from users WHERE username = '$_SESSION[username]'";
+   $result = mysqli_query($db, $query);
+   while($row = mysqli_fetch_array($result)) {
+   $id = $row['id'];
+   }
 ?>
 
 <html>
@@ -33,6 +42,7 @@ include('cookie.php');
 					<?php
 					
 					if(isset($_SESSION['username'])) {
+						echo "<li><a href=\"profile.php?id=". $id . "\">Profile</a></li>";
 						echo "<li><a href=\"editAccount.php\">Account</a></li>
 								<li><a href=\"logout.php\">Logout</a></li>";
 					} else {
