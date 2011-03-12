@@ -60,5 +60,19 @@ CREATE TABLE IF NOT EXISTS `sightings` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data for table `users`
 --
+--
+
+--
+-- Table structure for table `sightings`
+--
+
+CREATE TABLE IF NOT EXISTS `creatureBio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `food` varchar(50) NOT NULL,
+  `locale` varchar(50) NOT NULL default 'Everywhere',
+  `weakness` blob NOT NULL,
+  `Powers` blob NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

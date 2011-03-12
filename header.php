@@ -37,6 +37,7 @@ include('cookie.php');
 				
 					<!-- MENU -->
 					<li><a href="index.php">Home</a></li>
+					<li><a href="creature.php">Creature Bio</a><li>
 					<li><a href="list.php">List of Sightings</a></li>
 					
 					<?php
