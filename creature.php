@@ -55,7 +55,7 @@ session_start();
 	//need an if here... or some sort of check	
 		
 		<?php	
-include ('db_connect.php');	
+include "db_connect.php";   
 $ctype = $_POST['creature'];
 $submit= $_POST['submityn'];
 
