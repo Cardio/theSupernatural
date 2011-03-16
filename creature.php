@@ -50,10 +50,7 @@ session_start();
 		<input type="hidden" id="submityn" name="submityn" value="y" />
 		</td></tr></table>
 		</form>
-		
-		
-	//need an if here... or some sort of check	
-		
+				
 		<?php	
 include "db_connect.php";   
 $ctype = $_POST['creature'];
@@ -62,7 +59,7 @@ $submit= $_POST['submityn'];
 if($submit=='y'){
 	
 
-$query = "SELECT * FROM creatureBio WHERE name= '$ctype' ";
+$query = "SELECT * FROM creatureBio WHERE name = '$ctype'";
 //I think this is where my error is...can I put ctype in there like that?
 
 $result = mysqli_query($db, $query)or die("Error Querying Database");
