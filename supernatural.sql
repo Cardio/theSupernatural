@@ -73,6 +73,33 @@ CREATE TABLE IF NOT EXISTS `creatureBio` (
   `food` varchar(50) NOT NULL,
   `locale` varchar(50) NOT NULL default 'Everywhere',
   `weakness` blob NOT NULL,
-  `Powers` blob NOT NULL,
+  `powers` blob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(1, 'Zombie', 'BRAINS', 'Everywhere', 'Headshots', 'Being the living dead?');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(2, 'Unicorn', 'Candy', 'Candy Mountain', 'Rainbows', 'Beauty');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(3, 'Leprechaun', 'Meat & Potatoes', 'Ireland', 'Beer', 'Being short');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(4, 'Panda', 'bamboo', 'China and Zoos', 'invincible', 'Being Cuddly');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(5, 'Demon', 'Innocent Souls', 'Hell', 'Greed', 'Temptation');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(6, 'Ghost', 'Air', 'Everywhere', 'idk', 'idk');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(7, 'Medusa', 'Humans', 'Deadly Lair', 'Decapitation', 'Turns things to stone');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(8, 'Vampire', 'blood', 'Translyvania', 'Garlic and Wooden Stakes', 'Being the undead');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(9, 'Troll', 'Human Limbs', 'In Dark Lonely Caves', 'Hunger', 'Being so ugly!');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(10, 'David Woodruff', 'nerdiness', 'Virginia', 'Pita Chips', 'He is useless.');
+INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
+(11, 'Pikachu', 'lame', 'lame', 'lame', 'lame');
+
+
+
