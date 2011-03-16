@@ -62,7 +62,7 @@ $submit= $_POST['submityn'];
 if($submit=='y'){
 	
 
-$query = "SELECT * FROM creatureBio WHERE name= $ctype ";
+$query = "SELECT * FROM creatureBio WHERE name= '$ctype' ";
 //I think this is where my error is...can I put ctype in there like that?
 
 $result = mysqli_query($db, $query)or die("Error Querying Database");
