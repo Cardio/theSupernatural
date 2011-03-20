@@ -109,3 +109,18 @@ CREATE TABLE IF NOT EXISTS `creatureToSight` (
   FOREIGN KEY (creatureId)
   REFERENCES creatureBio (creatureId)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+--
+-- Table structure for table `equipment`
+--
+
+CREATE TABLE IF NOT EXISTS `equipment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL default 'John Doe',
+  `description` blob NOT NULL,
+  `rating` int(5) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `equipment` (`id`, `name`, `description`, `rating`) VALUES
+(1, 'Duct Tape', 'Use it for anything and everything.  An essential tool for unexpected situations and annoying little siblings.', 5);
+

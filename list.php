@@ -62,7 +62,8 @@ $query = "SELECT * FROM sightings ORDER BY date DESC";
 } 	
   
 $result = mysqli_query($db, $query)or die("Error Querying Database");
-   
+$row=mysqli_fetch_array($result); 
+$sid=$row['id'];  
 echo"<br/><hr/>";
    while($row = mysqli_fetch_array($result))
     {

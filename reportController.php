@@ -7,11 +7,11 @@ $month = $_POST['month'];
 $day = $_POST['day'];
 $yr = $_POST['year'];
 $date = $yr . '-' . $month . '-' . $day;
-$city = $_POST['city'];
+$city = mysqli_real_escape_string($db, trim($_POST['city']));
 $state = $_POST['state'];
-$exp = $_POST['exp'];
+$exp = mysqli_real_escape_string($db, trim($_POST['exp']));
 $ctype = $_POST['creature'];
-$act = $_POST['action'];
+$act = mysqli_real_escape_string($db, trim($_POST['action']));
 
 
 
