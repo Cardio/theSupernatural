@@ -97,9 +97,7 @@ INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) 
 INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
 (9, 'Troll', 'Human Limbs', 'In Dark Lonely Caves', 'Hunger', 'Being so ugly!');
 INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
-(10, 'David Woodruff', 'nerdiness', 'Virginia', 'Pita Chips', 'He is useless.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) VALUES
-(11, 'Pikachu', 'lame', 'lame', 'lame', 'lame');
+(10, 'Pikachu', 'lame', 'lame', 'lame', 'lame');
 
 --
 -- Table structure for table `equipment`
