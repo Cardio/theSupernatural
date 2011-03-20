@@ -41,7 +41,6 @@ session_start();
 			<option value="Medusa">Medusa</option>
 			<option value="Vampire">Vampire</option>
 			<option value="Troll">Troll</option>
-			<option value="DavidWoodruff">David Woodruff</option>
 			<option value="Pikachu">Pikachu</option>
 		</select>
 		</td><tr>
@@ -60,29 +59,31 @@ if($submit=='y'){
 	
 
 $query = "SELECT * FROM creatureBio WHERE name = '$ctype'";
-//I think this is where my error is...can I put ctype in there like that?
 
 $result = mysqli_query($db, $query)or die("Error Querying Database");
   
-//echo"<br/><hr/>";
-  // while($row = mysqli_fetch_array($result))
-    //{
-//	echo"<table>";
-//    echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td></tr>";
-//	echo "<tr><td>Food Preference:" . $row['food'] . "</td><td>General Location:" . $row['locale'] . "</td></tr>";
-//	echo "<tr><td>Weaknesses:</td><td>";
-//	echo wordwrap($row['weakness'] . "</td></tr>",50,"<br />\n",TRUE);
-//	echo "<tr><td>Powers:</td><td>";
-//	echo wordwrap($row['powers'] . "</td></tr>",50,"<br />\n",TRUE);
-//	echo "</table>";
-//	echo"<hr/>";
-//    }
-//echo "</table>";
+echo"<br/><hr/>";
+   while($row = mysqli_fetch_array($result))
+    {
+	echo"<table>";
+    echo "<tr><td width=\"35%\">Name: </td><td>" . $row['name'] . "</td></tr>";
+	echo "<tr><td>Food Preference: </td><td>" . $row['food'] . "</td></tr>";
+	echo "<td>General Location: </td><td>" . $row['locale'] . "</td></tr>";
+	echo "<tr><td>Weaknesses:</td><td>";
+	echo wordwrap($row['weakness'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "<tr><td>Powers:</td><td>";
+	echo wordwrap($row['powers'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "<tr><td>Recent Sightings:</td><td></td></tr>";
+	echo "</table>";
+	echo"<hr/>";
+	//connect with recent sightings...
+    }
+echo "</table>";
 
 mysqli_close($db);
 }
 else{
-echo"<br/> this is other part of if..";
+echo"<br/>";
 }
 	
 ?>
