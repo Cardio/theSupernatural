@@ -54,27 +54,23 @@ CREATE TABLE IF NOT EXISTS `sightings` (
   `city` varchar(50) NOT NULL default 'Not Listed',
   `state` varchar(2) NOT NULL,
   `experience` blob NOT NULL,
-  `creature_type` varchar(25) NOT NULL,
   `action` blob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
---
---
 
 --
--- Table structure for table `sightings`
+-- Table structure for table `creatureBio`
 --
 
 CREATE TABLE IF NOT EXISTS `creatureBio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT, 
   `name` varchar(50) NOT NULL,
   `food` varchar(50) NOT NULL,
   `locale` varchar(50) NOT NULL default 'Everywhere',
   `weakness` blob NOT NULL,
-  `powers` blob NOT NULL,
-  PRIMARY KEY (`id`)
+  `powers` blob NOT NULL, 
+  PRIMARY KEY(`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
@@ -100,4 +96,16 @@ INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) 
 (10, 'Pikachu', 'lame', 'lame', 'lame', 'lame');
 
 
-
+--
+-- Table structure for junction table between `sightings` and `creaturBio`
+--
+CREATE TABLE IF NOT EXISTS `creatureToSight` (
+  `sightingId` int(11) NOT NULL PRIMARY KEY, 
+  `creatureId` int(2) NOT NULL,
+  CONSTRAINT sightings_id_fk
+  FOREIGN KEY (sightingId)
+  REFERENCES sightings (sightingId),
+  CONSTRAINT creatureBio_creatureId_fk
+  FOREIGN KEY (creatureId)
+  REFERENCES creatureBio (creatureId)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
