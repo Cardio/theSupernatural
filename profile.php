@@ -18,7 +18,11 @@ $query="SELECT * FROM users WHERE id=$id";
 $result=mysqli_query($db, $query);
 $row=mysqli_fetch_array($result);
 $zip=$row['zipcode'];
+$bio=$row['bio'];
+$firstname=$row['firstname'];
+$lastname=$row['lastname'];
 $username=$row['username'];
+$pic=$row['pic'];
 mysqli_close($db);
 
 
@@ -29,11 +33,25 @@ mysqli_close($db);
 			<div class="page">
 				<div class="content">
 					<!-- CONTENT -->
-<h3><?php echo "$username"; ?>'s Profile</h3>
+<h3><?php echo $username ?>'s Profile</h3>
 <br/>
-<p>Zip Code: <?php echo "$zip"; ?></p>
-<p>Bio: //put a short bio here, but add it to the table first</p>
-<p>More info, maybe a picture, the type of things they hunt, reports, etc.</p>
+<?php
+if (isset($pic)){
+?>
+<p><img src="<?php echo $pic ?>" /></p>
+<?php
+}
+else{
+?>
+<p><img src='http://localhost/groupProject/theSupernatural/profilePictures/default.jpg' height="25%" width="25%" /></p>
+<?php
+}
+?>
+<p><img src='<?php echo $pic ?>' /></p>
+<p>First Name: <?php echo $firstname ?></p>
+<p>Last Name: <?php echo $lastname ?></p>
+<p>Zip Code: <?php echo $zip ?></p>
+<p>Bio: <?php echo $bio ?> </p>
 
 <!-- END CONTENT -->
 </div>
