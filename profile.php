@@ -47,13 +47,10 @@ else{
 <?php
 }
 ?>
-<p><img src='<?php echo $pic ?>' /></p>
 <p>First Name: <?php echo $firstname ?></p>
 <p>Last Name: <?php echo $lastname ?></p>
 <p>Zip Code: <?php echo $zip ?></p>
 <p>Bio: <?php echo $bio ?> </p>
-
-<p>//List of user's most recent sightings</p>
 
 <!-- END CONTENT -->
 </div>
