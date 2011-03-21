@@ -57,7 +57,7 @@ if($_GET['msg']=='passChange') {
 <?php
 if (isset($pic)){
 ?>
-<p><img src="<?php echo $pic ?>" /></p>
+<p><img src="<?php echo $pic ?>" height="25%" width="25%" /></p>
 <?php
 }
 else{
