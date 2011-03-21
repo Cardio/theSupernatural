@@ -43,6 +43,7 @@ $result = mysqli_query($db, $query)or die("Error Querying Database");
 echo"<br/><hr/>";
    while($row = mysqli_fetch_array($result))
     {
+    	$equipId = $row['id'];
 	echo"<table>";
     echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\"></td></tr>";
 	echo "<tr><td>Description:</td><td>";
@@ -59,6 +60,21 @@ echo"<br/><hr/>";
 	} else if($row['rating']==5) {
 		echo wordwrap("This item is your precious.  You're Golem and it's the one ring, you never want to be without it.",50,"<br />\n",TRUE);
 	}
+	echo "</td></tr>";
+	echo "<tr><td></td><td>";
+	
+	$query2 = "SELECT * FROM equipToCreature WHERE equipId = '$equipId'";
+	$result2 = mysqli_query($db, $query2)or die("Error Querying Database");
+		while($row2 = mysqli_fetch_array($result2)) {
+			$creatureId = $row2['creatureId'];
+			$query3 = "SELECT * FROM creatureBio WHERE id = '$creatureId'";
+			$result3 = mysqli_query($db, $query3)or die("Error Querying Database");
+			$row3 = mysqli_fetch_array($result3);
+			echo $row3['name'];
+			echo "<br />";
+		}
+	
+	echo "</td></tr>";
 	echo "</table>";
 	echo"<hr/>";
     }

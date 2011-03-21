@@ -102,7 +102,7 @@ INSERT INTO `creatureBio` (`id`, `name`, `food`,`locale`, `weakness`, `powers`) 
 CREATE TABLE IF NOT EXISTS `creatureToSight` (
   `sightingId` int(11) NOT NULL PRIMARY KEY, 
   `creatureId` int(2) NOT NULL,
-  CONSTRAINT sightings_id_fk
+  CONSTRAINT sightings_sightingId_fk
   FOREIGN KEY (sightingId)
   REFERENCES sightings (sightingId),
   CONSTRAINT creatureBio_creatureId_fk
@@ -124,3 +124,37 @@ CREATE TABLE IF NOT EXISTS `equipment` (
 INSERT INTO `equipment` (`id`, `name`, `description`, `rating`) VALUES
 (1, 'Duct Tape', 'Use it for anything and everything.  An essential tool for unexpected situations and annoying little siblings.', 5);
 
+--
+-- Table structure for junction table between `equipment` and `creaturBio`
+--
+CREATE TABLE IF NOT EXISTS `equipToCreature` (
+  `equipId` int(11) NOT NULL, 
+  `creatureId` int(2) NOT NULL,
+  CONSTRAINT equipment_equipId_fk
+  FOREIGN KEY (equipId)
+  REFERENCES equipment (id),
+  CONSTRAINT creatureBio_creatureId_fk
+  FOREIGN KEY (creatureId)
+  REFERENCES creatureBio (id)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,1);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,2);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,3);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,4);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,5);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,6);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,7);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,8);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,9);
+INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
+(1,10);
