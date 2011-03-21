@@ -43,6 +43,45 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'taco', '9dc4319c27f6479adc842ebef4a324a40759b95c');
 
 --
+-- creatureBio
+--
+
+CREATE TABLE IF NOT EXISTS `creatureBio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(12) NOT NULL,
+  `food` varchar(50) NOT NULL,
+  `locale` varchar(50) NOT NULL,
+  `weakness` blob NOT NULL,
+  `powers` blob NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(1, 'Zombie', 'Brains', 'Viral outbreak', 'Damage to the brain.', 'Hurting anything but the brain doesn\'t seem to effect them.');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(2, 'Unicorn', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(3, 'Leprechaun', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(4, 'Panda', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(5, 'Demon', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(6, 'Ghost', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(7, 'Medusa', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(8, 'Vampire', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(9, 'Troll', '', '', '', '');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
+(10, 'Pikachu', 'Poke-Food', 'PokeBall', 'Rock-type Attacks', 'Electric-type attacks');
+
+--
 -- Table structure for table `sightings`
 --
 
