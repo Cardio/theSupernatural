@@ -1,5 +1,14 @@
 <?php
+
 include('cookie.php');
+
+  include "db_connect.php";
+
+   $query = "select * from users WHERE username = '$_SESSION[username]'";
+   $result = mysqli_query($db, $query);
+   while($row = mysqli_fetch_array($result)) {
+   $id = $row['id'];
+   }
 ?>
 
 <html>
@@ -28,11 +37,14 @@ include('cookie.php');
 				
 					<!-- MENU -->
 					<li><a href="index.php">Home</a></li>
-					<li><a href="list.php">List of Sightings</a></li>
+					<li><a href="creature.php">Creatures</a></li>
+					<li><a href="equipList.php">Equipment</a></li>
+					<li><a href="list.php">Sightings</a></li>
 					
 					<?php
 					
 					if(isset($_SESSION['username'])) {
+						echo "<li><a href=\"profile.php?id=". $id . "\">Profile</a></li>";
 						echo "<li><a href=\"editAccount.php\">Account</a></li>
 								<li><a href=\"logout.php\">Logout</a></li>";
 					} else {

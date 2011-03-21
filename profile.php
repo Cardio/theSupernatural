@@ -53,6 +53,8 @@ else{
 <p>Zip Code: <?php echo $zip ?></p>
 <p>Bio: <?php echo $bio ?> </p>
 
+<p>//List of user's most recent sightings</p>
+
 <!-- END CONTENT -->
 </div>
 <?php
