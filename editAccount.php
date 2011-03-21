@@ -66,8 +66,28 @@ else{
 <?php
 }
 ?>
-<p>Select a picture to upload: <?php include("picUploadController.php"); ?><p>
+<div class="error">
+<?php
+if($_GET['msg']=='picUploaded') {
+	echo "<p>Profile Picture Successfully Changed!<p>";
+}
+if($_GET['msg']=='copyUnsuccessful') {
+	echo "<p>Copy Unsuccessful. Please Try Again.<p>";
+}
+if($_GET['msg']=='size') {
+	echo "<p>Size Limit Exceeded. Please Try Again.<p>";
+}
+if($_GET['msg']=='extension') {
+	echo "<p>Incorrect Image Format. Please Try Again.<p>";
+}
+?>
+</div>
+<form enctype="multipart/form-data" action="picUploadController.php" method="post">
+<p>Select a picture to upload: <input name="image" type="file" /><p>
+<input name="Submit" type="submit" value="Change Picture" />
+</form>
 <br />
+<br/>
 
 <p><b>Edit Other Settings</b></p>
 <div class="error">
@@ -85,6 +105,7 @@ if($_GET['msg']=='infoChange') {
 <p>Bio: <input type="text" name="bio" value="<?php echo $bio ?>" /></p>
 <p><input type="submit" value="Edit Account Info" /></p>
 </form>
+<br/>
 <!-- END CONTENT -->
 </div>
 <?php
