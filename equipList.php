@@ -63,7 +63,7 @@ echo"<br/><hr/>";
 	echo "</td></tr>";
 	echo "<tr><td></td><td>";
 	
-	$query2 = "SELECT creatureBio.name FROM equipToCreature INNER JOIN creatureBio ON equipToCreature.creatureId = creatureBio.id";
+	$query2 = "SELECT creatureBio.name FROM equipToCreature INNER JOIN creatureBio ON equipToCreature.creatureId = creatureBio.id WHERE equipToCreature.equipId = '$equipId'";
 	$result2 = mysqli_query($db, $query2)or die("Error Querying Database2");
 		while($row2 = mysqli_fetch_array($result2)) {
 			echo $row2['name'];

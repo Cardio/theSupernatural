@@ -92,7 +92,6 @@ CREATE TABLE IF NOT EXISTS `sightings` (
   `city` varchar(50) NOT NULL default 'Not Listed',
   `state` varchar(2) NOT NULL,
   `experience` blob NOT NULL,
-  `creature_type` varchar(25) NOT NULL,
   `action` blob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

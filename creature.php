@@ -84,7 +84,15 @@ echo"<br/><hr/>";
 	$result2= mysqli_query($db, $query2)or die("Error Querying Database5");
 	$row2= mysqli_fetch_array($result2);
 	$cid=$row2['id'];
-	$query1 ="SELECT * FROM creatureToSight WHERE creatureId='$cid'";
+	
+	$query3 = "SELECT sightings.date FROM creatureToSight INNER JOIN sightings ON creatureToSight.sightingId = sightings.id WHERE creatureToSight.creatureId = '$cid'";
+	$result3 = mysqli_query($db, $query3)or die("Error Querying Database2");
+		while($row3 = mysqli_fetch_array($result3)) {
+			echo $row3['date'];
+			echo "<br />";
+		}
+	
+/*	$query1 ="SELECT * FROM creatureToSight WHERE creatureId='$cid'";
 	$result1 = mysqli_query($db, $query1)or die("Error Querying Database4");
 	while($row1=mysqli_fetch_array($result1)){
 	$sid=$row1['sightingId'];
@@ -94,7 +102,7 @@ echo"<br/><hr/>";
 		$date=$row3['date'];
 		echo $date;
 		echo "<br/>";
-	}	//SELECT * FROM creatureToSight WHERE 
+	}	//SELECT * FROM creatureToSight WHERE */
 	echo"</td></tr>";
 	echo "</table>";
 	echo"<hr/>";
