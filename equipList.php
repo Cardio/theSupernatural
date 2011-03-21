@@ -63,7 +63,15 @@ echo"<br/><hr/>";
 	echo "</td></tr>";
 	echo "<tr><td></td><td>";
 	
-	$query2 = "SELECT * FROM equipToCreature WHERE equipId = '$equipId'";
+	$query2 = "SELECT creatureBio.name FROM equipToCreature INNER JOIN creatureBio ON equipToCreature.creatureId = creatureBio.id";
+	$result2 = mysqli_query($db, $query2)or die("Error Querying Database2");
+		while($row2 = mysqli_fetch_array($result2)) {
+			echo $row2['name'];
+			echo "<br />";
+		}
+
+	
+/*	$query2 = "SELECT * FROM equipToCreature WHERE equipId = '$equipId'";
 	$result2 = mysqli_query($db, $query2)or die("Error Querying Database");
 		while($row2 = mysqli_fetch_array($result2)) {
 			$creatureId = $row2['creatureId'];
@@ -72,7 +80,7 @@ echo"<br/><hr/>";
 			$row3 = mysqli_fetch_array($result3);
 			echo $row3['name'];
 			echo "<br />";
-		}
+		} */
 	
 	echo "</td></tr>";
 	echo "</table>";
