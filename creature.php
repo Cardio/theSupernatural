@@ -41,8 +41,8 @@ session_start();
 			<option value="Medusa">Medusa</option>
 			<option value="Vampire">Vampire</option>
 			<option value="Troll">Troll</option>
-			<option value="DavidWoodruff">David Woodruff</option>
 			<option value="Pikachu">Pikachu</option>
+			<option value="All"> Display All</option>
 		</select>
 		</td><tr>
 		<tr><td>
@@ -58,31 +58,54 @@ $submit= $_POST['submityn'];
 
 if($submit=='y'){
 	
-
+if($ctype<>'All'){
 $query = "SELECT * FROM creatureBio WHERE name = '$ctype'";
-//I think this is where my error is...can I put ctype in there like that?
+}
+else{
+$query ="SELECT * FROM creatureBio";
+}
 
 $result = mysqli_query($db, $query)or die("Error Querying Database");
   
-//echo"<br/><hr/>";
-  // while($row = mysqli_fetch_array($result))
-    //{
-//	echo"<table>";
-//    echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td></tr>";
-//	echo "<tr><td>Food Preference:" . $row['food'] . "</td><td>General Location:" . $row['locale'] . "</td></tr>";
-//	echo "<tr><td>Weaknesses:</td><td>";
-//	echo wordwrap($row['weakness'] . "</td></tr>",50,"<br />\n",TRUE);
-//	echo "<tr><td>Powers:</td><td>";
-//	echo wordwrap($row['powers'] . "</td></tr>",50,"<br />\n",TRUE);
-//	echo "</table>";
-//	echo"<hr/>";
-//    }
-//echo "</table>";
+echo"<br/><hr/>";
+   while($row = mysqli_fetch_array($result))
+    {
+	echo"<table>";
+    echo "<tr><td width=\"35%\">Name: </td><td>" . $row['name'] . "</td></tr>";
+	echo "<tr><td>Food Preference: </td><td>" . $row['food'] . "</td></tr>";
+	echo "<td>General Location: </td><td>" . $row['locale'] . "</td></tr>";
+	echo "<tr><td>Weaknesses:</td><td>";
+	echo wordwrap($row['weakness'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "<tr><td>Powers:</td><td>";
+	echo wordwrap($row['powers'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "<tr><td>Recent Sightings:</td><td>";
+	$thename=$row['name'];
+	$query2="SELECT * FROM creatureBio WHERE name='$thename'";
+	$result2= mysqli_query($db, $query2)or die("Error Querying Database5");
+	$row2= mysqli_fetch_array($result2);
+	$cid=$row2['id'];
+	$query1 ="SELECT * FROM creatureToSight WHERE creatureId='$cid'";
+	$result1 = mysqli_query($db, $query1)or die("Error Querying Database4");
+	while($row1=mysqli_fetch_array($result1)){
+	$sid=$row1['sightingId'];
+	$query3="SELECT * FROM sightings WHERE id='$sid'";
+	$result3= mysqli_query($db, $query3)or die("Error Querying Database3");
+	$row3= mysqli_fetch_array($result3);
+		$date=$row3['date'];
+		echo $date;
+		echo "<br/>";
+	}	//SELECT * FROM creatureToSight WHERE 
+	echo"</td></tr>";
+	echo "</table>";
+	echo"<hr/>";
+	//connect with recent sightings...
+    }
+echo "</table>";
 
 mysqli_close($db);
 }
 else{
-echo"<br/> this is other part of if..";
+echo"<br/>";
 }
 	
 ?>

@@ -107,7 +107,6 @@ session_start();
 						<option value="Medusa">Medusa</option>
 						<option value="Vampire">Vampire</option>
 						<option value="Troll">Troll</option>
-						<option value="DavidWoodruff">David Woodruff</option>
 						<option value="Pikachu">Pikachu</option>
 						<option value="Other">Other</option></select></td></tr>
 					<tr><td></td>
