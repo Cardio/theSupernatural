@@ -118,6 +118,6 @@ INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
 (1,9);
 INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
 (1,10);
-=======
+
 -- Dumping data for table `users`
 --
