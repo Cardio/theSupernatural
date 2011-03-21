@@ -40,16 +40,16 @@ session_start();
 					<tr><td></td></tr>
 					<tr><td colspan="2">Which Creature Is This Item Used For?</td></tr>
 					<tr><td>
-						<input type="checkbox" name="creature" value="Zombie" /> Zombie<br />
-						<input type="checkbox" name="creature" value="Unicorn" /> Unicorn<br />
-						<input type="checkbox" name="creature" value="Leprechaun" /> Leprechaun<br />
-						<input type="checkbox" name="creature" value="Panda" /> Panda<br />
-						<input type="checkbox" name="creature" value="Demon" /> Demon<br />
-						<input type="checkbox" name="creature" value="Ghost" /> Ghost<br />
-						<input type="checkbox" name="creature" value="Medusa" /> Medusa<br />
-						<input type="checkbox" name="creature" value="Vampire" /> Vampire<br />
-						<input type="checkbox" name="creature" value="Troll" /> Troll<br />
-						<input type="checkbox" name="creature" value="Pikachu" /> Pikachu<br />
+						<input type="checkbox" name="creature[]" value="Zombie" /> Zombie<br />
+						<input type="checkbox" name="creature[]" value="Unicorn" /> Unicorn<br />
+						<input type="checkbox" name="creature[]" value="Leprechaun" /> Leprechaun<br />
+						<input type="checkbox" name="creature[]" value="Panda" /> Panda<br />
+						<input type="checkbox" name="creature[]" value="Demon" /> Demon<br />
+						<input type="checkbox" name="creature[]" value="Ghost" /> Ghost<br />
+						<input type="checkbox" name="creature[]" value="Medusa" /> Medusa<br />
+						<input type="checkbox" name="creature[]" value="Vampire" /> Vampire<br />
+						<input type="checkbox" name="creature[]" value="Troll" /> Troll<br />
+						<input type="checkbox" name="creature[]" value="Pikachu" /> Pikachu<br />
 						</td></tr>
 					<td><input type="submit" value="Submit" /> </td></tr>
 					</table>

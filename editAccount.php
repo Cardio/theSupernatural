@@ -21,6 +21,10 @@ $result = mysqli_query($db, $query)or die("Error Querying Database");
 $row = mysqli_fetch_array($result);
 
 $zip=$row['zipcode'];
+$bio=$row['bio'];
+$firstname=$row['firstname'];
+$lastname=$row['lastname'];
+$pic=$row['pic'];
 
 mysqli_close($db);
 
@@ -32,6 +36,7 @@ mysqli_close($db);
 				<div class="content">
 					<!-- CONTENT -->
 <h3>Edit Account</h3>
+<br/>
 <p><b>Change Password</b></p>
 <div class="error">
 <?php
@@ -46,6 +51,24 @@ if($_GET['msg']=='passChange') {
 <p><input type="submit" value="Change Password" /></p>
 </form>
 <br/>
+
+<p><b>Change Profile Picture</b></p>
+<p>Current Picture:</p>
+<?php
+if (isset($pic)){
+?>
+<p><img src="<?php echo $pic ?>" /></p>
+<?php
+}
+else{
+?>
+<p><img src='http://localhost/groupProject/theSupernatural/profilePictures/default.jpg' height="25%" width="25%" /></p>
+<?php
+}
+?>
+<p>Select a picture to upload: <?php include("picUploadController.php"); ?><p>
+<br />
+
 <p><b>Edit Other Settings</b></p>
 <div class="error">
 <?php
@@ -54,10 +77,12 @@ if($_GET['msg']=='infoChange') {
 }
 ?>
 </div>
+
 <form action="infoChangeController.php" method="post">
-<p>Your current zip code is: <?php echo $zip ?></p>
-<p>Change your zip code: <input type="text" name="zip" /></p>
-<p>Other stuff will come later.</p>
+<p>First Name: <input type="text" name="firstname" value="<?php echo $firstname ?>" /></p>
+<p>Last Name: <input type="text" name="lastname" value="<?php echo $lastname ?>" /></p>
+<p>Zip Code: <input type="text" name="zip" value="<?php echo $zip ?>"/></p>
+<p>Bio: <input type="text" name="bio" value="<?php echo $bio ?>" /></p>
 <p><input type="submit" value="Edit Account Info" /></p>
 </form>
 <!-- END CONTENT -->
