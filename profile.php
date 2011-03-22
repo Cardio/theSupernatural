@@ -23,9 +23,6 @@ $firstname=$row['firstname'];
 $lastname=$row['lastname'];
 $username=$row['username'];
 $pic=$row['pic'];
-mysqli_close($db);
-
-
 ?>
 <div id="wrap">
 	<div class="pagewrapper">
@@ -61,7 +58,7 @@ else{
 			echo $row2['date'];
 			echo ": ";
 			$sid=$row2['id'];
-			$query3 = "SELECT creatureBio.name FROM creatureToSight INNER JOIN creatureBio ON creatureToSight.sightingId = '$sid'";
+			$query3 = "SELECT creatureBio.name FROM creatureToSight INNER JOIN creatureBio ON creatureToSight.creatureId=creatureBio.id WHERE creatureToSight.sightingId='$sid'";
 			$result3= mysqli_query($db, $query3)or die("Error Querying Database5");
 			$row3= mysqli_fetch_array($result3);
 			echo $row3['name'];

@@ -109,7 +109,6 @@ echo"<br/><hr/>";
 	//connect with recent sightings...
     }
 echo "</table>";
-
 mysqli_close($db);
 }
 else{
