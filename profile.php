@@ -51,7 +51,23 @@ else{
 <p>Last Name: <?php echo $lastname; ?></p>
 <p>Zip Code: <?php echo $zip; ?></p>
 <p>Bio: <?php echo $bio; ?> </p>
-
+<p>Recent Sightings:  
+<?php 
+	$thename=$row['username'];
+	$query2="SELECT * FROM sightings WHERE name='$thename'";
+	$result2= mysqli_query($db, $query2)or die("Error Querying Database5");
+	//$row2= mysqli_fetch_array($result2);
+	while($row2 = mysqli_fetch_array($result2)) {
+			echo $row2['date'];
+			echo ": ";
+			$sid=$row2['id'];
+			$query3 = "SELECT creatureBio.name FROM creatureToSight INNER JOIN creatureBio ON creatureToSight.sightingId = '$sid'";
+			$result3= mysqli_query($db, $query3)or die("Error Querying Database5");
+			$row3= mysqli_fetch_array($result3);
+			echo $row3['name'];
+			echo "<br />";
+		}  
+?> </p>
 <!-- END CONTENT -->
 </div>
 <?php

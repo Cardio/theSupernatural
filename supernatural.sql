@@ -44,6 +44,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'taco', '9dc4319c27f6479adc842ebef4a324a40759b95c');
+INSERT INTO `users` (`id`, `username`, `password`)VALUES
+(2, 'AJ', '269b3eef1c991fb8b36ceb07ca9e659a779a7a2c');
 --
 -- creatureBio
 --
