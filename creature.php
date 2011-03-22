@@ -27,7 +27,8 @@ session_start();
 				
 					<!-- CONTENT -->
 					<h3>Creature Bio</h3>
-					
+					<div class="leftimg"><img src="images/monsters.jpg" width=175px height=200px /></div>
+		<br/><br/><br/>			
 		<form method="post" action="creature.php">
 		<table>
 		<tr><td>
@@ -50,6 +51,7 @@ session_start();
 		<input type="hidden" id="submityn" name="submityn" value="y" />
 		</td></tr></table>
 		</form>
+		<br/><br/><br/>
 				
 		<?php	
 include "db_connect.php";   
@@ -111,11 +113,12 @@ echo"<br/><hr/>";
 echo "</table>";
 mysqli_close($db);
 }
-else{
-echo"<br/>";
-}
-	
+
 ?>
+
+
+	
+
 		<!-- END CONTENT -->
 					
 				</div>

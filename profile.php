@@ -44,17 +44,21 @@ else{
 <?php
 }
 ?>
+
+<div class="leftimg"><img style="border:1px solid black;" src="images/bluemonster.png" width=120px height=120px /></div>
 <p>First Name: <?php echo $firstname; ?></p>
 <p>Last Name: <?php echo $lastname; ?></p>
 <p>Zip Code: <?php echo $zip; ?></p>
 <p>Bio: <?php echo $bio; ?> </p>
-<p>Recent Sightings:  
+<br/> <br/>
+<p>Recent Sightings: <br/>
 <?php 
 	$thename=$row['username'];
 	$query2="SELECT * FROM sightings WHERE name='$thename'";
 	$result2= mysqli_query($db, $query2)or die("Error Querying Database5");
 	//$row2= mysqli_fetch_array($result2);
 	while($row2 = mysqli_fetch_array($result2)) {
+			//echo "<td>";
 			echo $row2['date'];
 			echo ": ";
 			$sid=$row2['id'];
@@ -64,7 +68,8 @@ else{
 			echo $row3['name'];
 			echo "<br />";
 		}  
-?> </p>
+?> 
+</p>
 <!-- END CONTENT -->
 </div>
 <?php

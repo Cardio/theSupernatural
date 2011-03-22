@@ -52,7 +52,7 @@ if($_GET['msg']=='passChange') {
 <p><input type="submit" value="Change Password" /></p>
 </form>
 <br/>
-
+<!--
 <p><b>Change Profile Picture</b></p>
 <p>Current Picture:</p>
 <?php
@@ -89,7 +89,7 @@ if($_GET['msg']=='extension') {
 </form>
 <br />
 <br/>
-
+-->
 <p><b>Edit Other Settings</b></p>
 <div class="error">
 <?php
