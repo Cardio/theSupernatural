@@ -47,20 +47,21 @@ echo"<br/><hr/>";
 	echo"<table>";
     echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\"></td></tr>";
 	echo "<tr><td>Description:</td><td>";
-	echo wordwrap($row['description'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo wordwrap($row['description'] . "</td></tr>",45,"<br />\n",TRUE);
 	echo "<tr><td>Rating:</td><td>";
 	if($row['rating']==1) {
-		echo wordwrap("This item is hardly ever needed.  May as well use it as a back-scratch.",50,"<br />\n",TRUE);
+		echo wordwrap("This item is hardly ever needed.  May as well use it as a back-scratch.",45,"<br />\n",TRUE);
 	} else if($row['rating']==2) {
-		echo wordwrap("If you've got the time and resources, this item wouldn't be bad to have.  Think of it as an extra slice of pizza.",50,"<br />\n",TRUE);
+		echo wordwrap("If you've got the time and resources, this item wouldn't be bad to have.  Think of it as an extra slice of pizza.",45,"<br />\n",TRUE);
 	} else if($row['rating']==3) {
-		echo wordwrap("You should probably have this one.  However, if push comes to shove this would be near the top of your list to chuck overboard at an oncoming zombie.",50,"<br />\n",TRUE);
+		echo wordwrap("You should probably have this one.  However, if push comes to shove this would be near the top of your list to chuck overboard at an oncoming zombie.",45,"<br />\n",TRUE);
 	} else if($row['rating']==4) {
-		echo wordwrap("This item is like your credit card, don't leave home with out it!  And don't let a friend borrow it because they \"just want to get a snack real quick\", you'll never see it again.",50,"<br />\n",TRUE);
+		echo wordwrap("This item is like your credit card, don't leave home with out it!  And don't let a friend borrow it because they \"just want to get a snack real quick\", you'll never see it again.",45,"<br />\n",TRUE);
 	} else if($row['rating']==5) {
-		echo wordwrap("This item is your precious.  You're Golem and it's the one ring, you never want to be without it.",50,"<br />\n",TRUE);
+		echo wordwrap("This item is your precious.  You're Golem and it's the one ring, you never want to be without it.",45,"<br />\n",TRUE);
 	}
 	echo "</td></tr>";
+	echo "<tr><td colspan=\"2\">This item is useful when dealing with the following creatures:</td></tr>";
 	echo "<tr><td></td><td>";
 	
 	$query2 = "SELECT creatureBio.name FROM equipToCreature INNER JOIN creatureBio ON equipToCreature.creatureId = creatureBio.id WHERE equipToCreature.equipId = '$equipId'";

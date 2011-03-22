@@ -13,7 +13,7 @@ include('header.php');
 ?>
 <?php
 include ('db_connect.php');
-$id=$_GET['id'];
+$id=mysqli_real_escape_string($db, trim($_GET['id']));
 $query="SELECT * FROM users WHERE id= '$id'";
 $result=mysqli_query($db, $query);
 $row=mysqli_fetch_array($result);

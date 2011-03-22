@@ -2,8 +2,8 @@
 
    session_start();
    include "db_connect.php";
-   $pw1=$_POST['pw1'];
-   $pw2=$_POST['pw2'];
+   $pw1=mysqli_real_escape_string($db, trim($_POST['pw1']));
+   $pw2=mysqli_real_escape_string($db, trim($_POST['pw2']));
    $username=$_SESSION['username'];
    if ($pw1==$pw2){
    	$query="UPDATE users SET password= SHA('$pw1') WHERE username='$username'";

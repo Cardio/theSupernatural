@@ -2,12 +2,12 @@
 
   session_start();
   include "db_connect.php";
-  $zip=$_POST['zip'];
+  $zip=mysqli_real_escape_string($db, trim($_POST['zip']));
   $username=$_SESSION['username'];
-  $id=$_GET['id'];
-  $firstname=$_POST['firstname'];
-  $lastname=$_POST['lastname'];
-  $bio=$_POST['bio'];
+  $id=mysqli_real_escape_string($db, trim($_GET['id']));
+  $firstname=mysqli_real_escape_string($db, trim($_POST['firstname']));
+  $lastname=mysqli_real_escape_string($db, trim($_POST['lastname']));
+  $bio=mysqli_real_escape_string($db, trim($_POST['bio']));
   $query="UPDATE users SET zipcode='$zip' WHERE username='$username'";
   $result = mysqli_query($db, $query)or die("Error Querying Database 1");
 	

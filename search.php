@@ -29,9 +29,28 @@ session_start();
 <?php
 include('db_connect.php');
 
-$name = $_POST['q'];
-$filter = $_POST['drop'];
+$name = mysqli_real_escape_string($db, trim($_POST['q']));
+$filter = mysqli_real_escape_string($db, trim($_POST['drop']));
 
+if($name == "" || $name == "id=searchq") {
+	
+		echo "<form method=post class=searchform><p><center><h3>
+		<input type=text style=font-size:20px; size=13 value=\"Search Here\" id=searchq name=q> </input>
+		within <select name=drop style=font-size:22px;>
+		<option value=1>Everything</option>
+		<option value=2>Names</option>
+		<option value=3>Dates</option>
+		<option value=4>Cities</option>
+		<option value=5>States</option>
+		<option value=6>Experiences</option>
+		<option value=7>Creatures</option>
+		<option value=8>Actions</option>
+		</select>
+		<input type=submit class=formbutton name=submit value=\"Search Again\" style=\"height:30px;width:115px;font-size:small\">
+		</p></form></br>";
+		
+} else {
+	
 if($filter==1){
 	$query="SELECT * FROM sightings WHERE name LIKE '%$name%' OR date LIKE '%$name%'
 		OR city LIKE '%$name%' OR state LIKE '%$name%' OR experience LIKE '%$name%' 
@@ -197,17 +216,13 @@ while($row= mysqli_fetch_array($result)){
 
 }	
 echo"</table>";
-?>
 
+}
 
-
-</div>
-				
-				<?php
+echo "</div>";
 				    include('SIDEnFOOTER.html');
 				?>
 				   
-
 
 			</div>
 		</div>
