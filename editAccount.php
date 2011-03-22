@@ -20,6 +20,7 @@ $result = mysqli_query($db, $query)or die("Error Querying Database");
 
 $row = mysqli_fetch_array($result);
 
+$id=$_GET['id'];
 $zip=$row['zipcode'];
 $bio=$row['bio'];
 $firstname=$row['firstname'];
@@ -98,7 +99,7 @@ if($_GET['msg']=='infoChange') {
 ?>
 </div>
 
-<form action="infoChangeController.php" method="post">
+<form action="infoChangeController.php?id='$id'" method="post">
 <p>First Name: <input type="text" name="firstname" value="<?php echo $firstname ?>" /></p>
 <p>Last Name: <input type="text" name="lastname" value="<?php echo $lastname ?>" /></p>
 <p>Zip Code: <input type="text" name="zip" value="<?php echo $zip ?>"/></p>

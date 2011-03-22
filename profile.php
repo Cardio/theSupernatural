@@ -14,7 +14,7 @@ include('header.php');
 <?php
 include ('db_connect.php');
 $id=$_GET['id'];
-$query="SELECT * FROM users WHERE id=$id";
+$query="SELECT * FROM users WHERE id= '$id'";
 $result=mysqli_query($db, $query);
 $row=mysqli_fetch_array($result);
 $zip=$row['zipcode'];
@@ -47,10 +47,10 @@ else{
 <?php
 }
 ?>
-<p>First Name: <?php echo $firstname ?></p>
-<p>Last Name: <?php echo $lastname ?></p>
-<p>Zip Code: <?php echo $zip ?></p>
-<p>Bio: <?php echo $bio ?> </p>
+<p>First Name: <?php echo $firstname; ?></p>
+<p>Last Name: <?php echo $lastname; ?></p>
+<p>Zip Code: <?php echo $zip; ?></p>
+<p>Bio: <?php echo $bio; ?> </p>
 
 <!-- END CONTENT -->
 </div>
