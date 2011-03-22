@@ -3,9 +3,16 @@ session_start();
 
 include('db_connect.php');
 $username = mysqli_real_escape_string($db, trim($_POST['username']));
+if($username == "") {
+	header('Location: register.php?error=noName');
+	exit;
+}
 $pw = mysqli_real_escape_string($db, trim($_POST['pw']));
 $pw2 = mysqli_real_escape_string($db, trim($_POST['pw2']));
-
+if($pw == "") {
+	header('Location: register.php?error=noPass');
+	exit;
+}
    $query = "select * from users WHERE username = '$username' ";
    $result = mysqli_query($db, $query);
    if ($row = mysqli_fetch_array($result)) {

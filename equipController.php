@@ -1,8 +1,16 @@
 <?php
 session_start();
 
+if(isset($_SESSION['username'])){
+
 include ('db_connect.php');
 $name = mysqli_real_escape_string($db, trim($_POST['name']));
+
+if($name == "") {
+	header('Location:addEquip.php');
+exit;  
+}
+
 $description = mysqli_real_escape_string($db, trim($_POST['description']));
 $rating = $_POST['rating'];
 
@@ -35,4 +43,8 @@ if(empty($creature)) {
    
 header('Location:equipList.php?submit=y');
 exit;   
+
+} else {
+	header('Location: login.php');
+}
 ?>

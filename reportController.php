@@ -2,6 +2,9 @@
 session_start();
 
 include ('db_connect.php');
+
+if(isset($_SESSION['username'])){
+
 $name = $_SESSION['username'];
 $month = $_POST['month'];
 $day = $_POST['day'];
@@ -12,8 +15,6 @@ $state = $_POST['state'];
 $exp = mysqli_real_escape_string($db, trim($_POST['exp']));
 $ctype = $_POST['creature'];
 $act = mysqli_real_escape_string($db, trim($_POST['action']));
-
-
 
 
 $query="INSERT INTO sightings(name, date, city, state, experience, action) VALUES ('$name','$date','$city','$state','$exp','$act')";
@@ -38,6 +39,12 @@ $result = mysqli_query($db, $query3) or die("Error Querying Database3");
    
 header('Location:list.php?submit=y');
 exit;   
+
+} else {
+	
+	header('Location: login.php');
+	exit;
+}
 ?>
 
 
