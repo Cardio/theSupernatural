@@ -29,8 +29,7 @@ session_start();
 
 					<h3>Add Equipment</h3>
 				
-					
-					<form method="post" action="equipController.php">
+					<form enctype="multipart/form-data" method="post" action="equipController.php">
 					<table>
 					<tr><td>Item Name</td><td><input type="text" name="name" size="25" /></td></tr>
 					
@@ -42,7 +41,7 @@ session_start();
 					<tr><td>
 						<input type="checkbox" name="creature[]" value="Zombie" /> Zombie<br />
 						<input type="checkbox" name="creature[]" value="Unicorn" /> Unicorn<br />
-						<input type="checkbox" name="creature[]" value="Leprechaun" /> Leprechaun<br />
+						<input type="checkbox" name="creature[]" value="Leprechaun" />Leprechaun<br />
 						<input type="checkbox" name="creature[]" value="Panda" /> Panda<br />
 						<input type="checkbox" name="creature[]" value="Demon" /> Demon<br />
 						<input type="checkbox" name="creature[]" value="Ghost" /> Ghost<br />
@@ -51,9 +50,29 @@ session_start();
 						<input type="checkbox" name="creature[]" value="Troll" /> Troll<br />
 						<input type="checkbox" name="creature[]" value="Pikachu" /> Pikachu<br />
 						</td></tr>
-					<td><input type="submit" value="Submit" /> </td></tr>
+					<!--photo upload starts here, so if it effs it up then this is what you fix-->
+					<div class="error">
+					<?php
+					if($_GET['msg']=='picUploaded') {
+						echo "<p>Equipment Picture Successfully Changed!<p>";
+					}
+					if($_GET['msg']=='copyUnsuccessful') {
+						echo "<p>Copy Unsuccessful. Please Try Again.<p>";
+					}
+					if($_GET['msg']=='size') {
+						echo "<p>Size Limit Exceeded. Please Try Again.<p>";
+					}
+					if($_GET['msg']=='extension') {
+						echo "<p>Incorrect Image Format. Please Try Again.<p>";
+					}
+					?>
+					</div>
+					<form enctype="multipart/form-data" action="picUploadController.php" method="post">
+					<p>Select a picture of the equipment: <input name="image" type="file" /><p>
+					<!--and photo stuff ends here-->
+					<td></td></tr>
 					</table>
-					
+					<input type="submit" value="Submit" /> 
 					</form>
 					<!-- END CONTENT -->
 					
