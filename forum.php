@@ -51,14 +51,13 @@ $id=$row['author_id'];
 
 
 $query = "SELECT * FROM threadToPost WHERE threadId='$threadid'";  
-$result = mysqli_query($db, $query)or die("Error Querying Database1");echo"<br/><hr/>";
+$result = mysqli_query($db, $query)or die("Error Querying Database1");
+echo"<br/><hr/>";
 
 while($row = mysqli_fetch_array($result)){
 $query1 = "SELECT * FROM posts WHERE id='$row[postId]'";  
 $result1 = mysqli_query($db, $query1)or die("Error Querying Database2");
-//while(
-$row1 = mysqli_fetch_array($result1);
-//){
+while($row1 = mysqli_fetch_array($result1)){
 
 	$id=$row1['author_id'];
 	//echo $id;
@@ -78,7 +77,7 @@ $row1 = mysqli_fetch_array($result1);
 	echo "</table>";
 	echo"<hr/>";
     }
-	//}
+	}
 //echo "</table>";
 
 mysqli_close($db);
