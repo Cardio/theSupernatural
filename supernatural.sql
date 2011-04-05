@@ -177,7 +177,7 @@ INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
 --
 -- Blog Stuff
 --
-CREATE TABLE IF NOT EXISTS `blogposts` (
+CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `post` blob NOT NULL,
   `author_id` int(11) NOT NULL default '0',
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `blogposts` (
 -- Dumping data for table `blog_posts`
 --
 
-INSERT INTO `blogposts` (`id`, `post`, `author_id`, `date_posted`) VALUES
+INSERT INTO `posts` (`id`, `post`, `author_id`, `date_posted`) VALUES
 (1,  'This is my first post on my new simple blog!', 2, '2008-10-17'),
 (2,  'This post is all about web design! I love web design!', 2, '2008-10-17'),
 (3,  'This post is all about user experience and how important it is while designing for the web.', 2, '2008-10-18');
@@ -209,18 +209,18 @@ INSERT INTO `thread` (`id`,`title`, `post`, `author_id`, `date_posted`) VALUES
 (3,  'Hello','This post is all about user experience and how important it is while designing for the web.', 2, '2008-10-18');
 
 
-CREATE TABLE IF NOT EXISTS `threadToBlog`(
+CREATE TABLE IF NOT EXISTS `threadToPost`(
 `threadId` int(11) NOT NULL PRIMARY KEY, 
-`blogpostId` int(2) NOT NULL,
+`postId` int(2) NOT NULL,
   CONSTRAINT thread_threadId_fk
   FOREIGN KEY (threadId)
   REFERENCES thread (threadId),
-  CONSTRAINT blogposts_blogpostId_fk
-  FOREIGN KEY (blogpostId)
-  REFERENCES blogposts (blogpostId)
+  CONSTRAINT posts_postId_fk
+  FOREIGN KEY (postId)
+  REFERENCES posts (postId)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-INSERT INTO `threadToBlog` (`threadId`, `blogpostId`) VALUES
+INSERT INTO `threadToPost` (`threadId`, `postId`) VALUES
 (1,1);
-INSERT INTO `threadToBlog` (`threadId`, `blogpostId`) VALUES
+INSERT INTO `threadToPost` (`threadId`, `postId`) VALUES
 (2,2);
