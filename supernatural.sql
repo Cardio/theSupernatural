@@ -109,7 +109,7 @@ INSERT INTO `sightings` (`id`, `name`, `date`, `city`, `state`, `experience`, `a
 --
 --
 CREATE TABLE IF NOT EXISTS `creatureToSight` (
-  `sightingId` int(11) NOT NULL PRIMARY KEY, 
+  `sightingId` int(11) NOT NULL, 
   `creatureId` int(2) NOT NULL,
   CONSTRAINT sightings_sightingId_fk
   FOREIGN KEY (sightingId)
@@ -210,7 +210,7 @@ INSERT INTO `thread` (`id`,`title`, `post`, `author_id`, `date_posted`) VALUES
 
 
 CREATE TABLE IF NOT EXISTS `threadToPost`(
-`threadId` int(11) NOT NULL PRIMARY KEY, 
+`threadId` int(11) NOT NULL, 
 `postId` int(2) NOT NULL,
   CONSTRAINT thread_threadId_fk
   FOREIGN KEY (threadId)
