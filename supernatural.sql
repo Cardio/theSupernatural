@@ -35,7 +35,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `firstname` varchar(50),
   `lastname` varchar(50),
   `bio` blob,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  INDEX (`username`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -94,7 +95,8 @@ CREATE TABLE IF NOT EXISTS `sightings` (
   `state` varchar(2) NOT NULL,
   `experience` blob NOT NULL,
   `action` blob NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  INDEX (`name`, `date`, `city`, `state`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 --
 --
@@ -130,7 +132,8 @@ CREATE TABLE IF NOT EXISTS `equipment` (
   `name` varchar(50) NOT NULL default 'John Doe',
   `description` blob NOT NULL,
   `rating` int(5) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  INDEX (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 INSERT INTO `equipment` (`id`, `name`, `description`, `rating`) VALUES
