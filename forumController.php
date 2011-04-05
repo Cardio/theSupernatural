@@ -11,35 +11,34 @@ $day = $_POST['day'];
 $yr = $_POST['year'];
 $date = $yr . '-' . $month . '-' . $day;
 
-$title = mysqli_real_escape_string($db, trim($_POST['title']));
+//$title = mysqli_real_escape_string($db, trim($_POST['title']));
 $post = mysqli_real_escape_string($db, trim($_POST['post']));
+$threadid=$_POST['threadid'];
+//echo $threadid;
 
 $query4="SELECT * FROM users WHERE username='$name'";
 $result4= mysqli_query($db, $query4) or die("Error Querying Database4");
 $row=mysqli_fetch_array($result4); 
 $authorid=$row['id']; 
+//echo $authorid;
 
-$query="INSERT INTO blogposts (title, post, author_id, date_posted) VALUES ('$title', '$post', '$authorid', '$date')";
-//$query2="SELECT * FROM sigthings";
+$query="INSERT INTO posts (post, author_id, date_posted) VALUES ('$post', '$authorid', '$date')";
 $result = mysqli_query($db, $query) or die("Error Querying Database");
-  
-   
+$query2="SELECT * FROM posts WHERE date_posted='$date' AND post='$post'";
+$result = mysqli_query($db, $query2) or die("Error Querying Database2");    
+$row=mysqli_fetch_array($result); 
+$postid=$row['id'];
+//echo $postid;    
+$query3="INSERT INTO threadToPost(threadId, postId) VALUES ('$threadid','$postid')";
+$result = mysqli_query($db, $query3) or die("Error Querying Database3");   
+
 //$query1="SELECT * FROM creatureBio WHERE name='$ctype'" ;
 //$result = mysqli_query($db, $query1) or die("Error Querying Database1"); 
 //$row=mysqli_fetch_array($result); 
 //$cid=$row['id'];   
    
-   
-//$query2="SELECT * FROM sightings WHERE date='$date' AND name='$name' AND city='$city' AND state='$state' AND experience='$exp' AND action='$act'";
-//$result = mysqli_query($db, $query2) or die("Error Querying Database2");    
-//$row=mysqli_fetch_array($result); 
-//$sid=$row['id'];   
-
-//$query3="INSERT INTO creatureToSight(sightingId, creatureId) VALUES ('$sid','$cid')";
-//$result = mysqli_query($db, $query3) or die("Error Querying Database3");
-   mysqli_close($db);
-   
-header('Location:blog.php?submit=y');
+mysqli_close($db);   
+header('Location: forum.php?index='. $threadid);
 exit;   
 
 } else {

@@ -41,7 +41,11 @@ $result = mysqli_query($db, $query)or die("Error Querying Database");
 	$title=$row['title'];
 	$id=$row['id'];
 	//echo $title;
-	echo "<td><tr><a href=\"forum.php?index=" . $id . "  >" . $title . "<br/></tr></td>";
+	echo "<tr><td><a href=\"forum.php?index=";
+	echo $id;
+	echo "\">";
+    echo $title;
+	echo "</a><br/></td></tr>";
     echo "<hr /></table>";
 	}
 
@@ -52,7 +56,7 @@ mysqli_close($db);
     include('SIDEnFOOTER.html');
 ?>
 	</div>
-		
+	</div>	
 	</div>
 </div>
 </body>
