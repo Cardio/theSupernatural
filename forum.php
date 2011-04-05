@@ -33,9 +33,15 @@ $query = "SELECT * FROM thread WHERE id='$threadid'";
 $result = mysqli_query($db, $query)or die("Error Querying Database1");
 $row = mysqli_fetch_array($result);
 echo"<br/><hr/>";
+$id=$row['author_id'];
+	//echo $id;
+	$query2="SELECT * FROM users WHERE id='$id'";
+	$result2= mysqli_query($db, $query2)or die("Error Querying Database3");
+	$row2= mysqli_fetch_array($result2);
+	$username=$row2['username'];
 
-echo"<table>";
-    echo "<tr><td width=\"35%\">Name: " . $name . "</td><td width=\"65%\">Date:" . $row['date_posted'] . "</td></tr>";
+	echo "<table>";
+    echo "<tr><td width=\"35%\">Name: " . $username  . "</td><td width=\"65%\">Date:" . $row['date_posted'] . "</td></tr>";
 	echo "<tr><td>Title:</td><td>";
 	echo wordwrap($row['title'] . "</td></tr>",50,"<br />\n",TRUE);
 	echo "<tr><td>Post:</td><td>";
@@ -64,7 +70,7 @@ $row1 = mysqli_fetch_array($result1);
 
 	
 	echo"<table>";
-    echo "<tr><td width=\"35%\">Name: " . $row1['author_id'] . "</td><td width=\"65%\">Date:" . $row1['date_posted'] . "</td></tr>";
+    echo "<tr><td width=\"35%\">Name: " . $username . "</td><td width=\"65%\">Date:" . $row1['date_posted'] . "</td></tr>";
 	//echo "<tr><td>Title:</td><td>";
 	//echo wordwrap($row1['title'] . "</td></tr>",50,"<br />\n",TRUE);
 	echo "<tr><td>Post:</td><td>";
