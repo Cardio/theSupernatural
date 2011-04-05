@@ -64,7 +64,7 @@ $row1 = mysqli_fetch_array($result1);
 
 	
 	echo"<table>";
-    echo "<tr><td width=\"35%\">Name: " . $username . "</td><td width=\"65%\">Date:" . $row1['date_posted'] . "</td></tr>";
+    echo "<tr><td width=\"35%\">Name: " . $row1['author_id'] . "</td><td width=\"65%\">Date:" . $row1['date_posted'] . "</td></tr>";
 	//echo "<tr><td>Title:</td><td>";
 	//echo wordwrap($row1['title'] . "</td></tr>",50,"<br />\n",TRUE);
 	echo "<tr><td>Post:</td><td>";
