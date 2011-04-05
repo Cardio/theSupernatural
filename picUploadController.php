@@ -56,7 +56,7 @@ function getExtension($str) {
 			$image_name=time().'.'.$extension;
 			//the new name will be containing the full path where will be stored (images folder)
 			$newname="profilePictures/".$image_name;
-			$queryname="http://localhost/groupProject/theSupernatural/".$newname;
+			$queryname="http://localhost/theSupernatural/".$newname;
 			$query="UPDATE users SET pic='$queryname' WHERE id=$id";
 			$result=mysqli_query($db, $query);
 			mysqli_close($db);
