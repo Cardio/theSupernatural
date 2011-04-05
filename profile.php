@@ -32,7 +32,6 @@ $pic=$row['pic'];
 					<!-- CONTENT -->
 <h3><?php echo $username ?>'s Profile</h3>
 <br/>
-<!--
 <?php
 if (isset($pic)){
 ?>
@@ -42,13 +41,14 @@ if (isset($pic)){
 }
 else{
 ?>
-<p><img src='http://localhost/groupProject/theSupernatural/profilePictures/default.jpg' height="25%" width="25%" /></p>
+<p><img src='http://localhost/theSupernatural/profilePictures/default.jpg' height="25%" width="25%" /></p>
 
 <?php
 }
 ?>
--->
+<!--
 <div class="leftimg"><img style="border:1px solid black;" src="images/bluemonster.png" width=120px height=120px /></div>
+-->
 <p>First Name: <?php echo $firstname; ?></p>
 <p>Last Name: <?php echo $lastname; ?></p>
 <p>Zip Code: <?php echo $zip; ?></p>
