@@ -52,7 +52,7 @@ if($_GET['msg']=='passChange') {
 <p><input type="submit" value="Change Password" /></p>
 </form>
 <br/>
-<!--
+
 <p><b>Change Profile Picture</b></p>
 <p>Current Picture:</p>
 <?php
@@ -63,7 +63,7 @@ if (isset($pic)){
 }
 else{
 ?>
-<p><img src='http://localhost/groupProject/theSupernatural/profilePictures/default.jpg' height="25%" width="25%" /></p>
+<p><img src='http://localhost/theSupernatural/profilePictures/default.jpg' height="25%" width="25%" /></p>
 <?php
 }
 ?>
@@ -89,7 +89,7 @@ if($_GET['msg']=='extension') {
 </form>
 <br />
 <br/>
--->
+
 <p><b>Edit Other Settings</b></p>
 <div class="error">
 <?php
@@ -116,5 +116,7 @@ include('SIDEnFOOTER.html');
 </div>
 </div>
 </div>
+</body>
+</html>
 </body>
 </html>
