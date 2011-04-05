@@ -79,10 +79,7 @@ echo"<br/><hr/>";
     echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\">Date:" . $row['date'] . "</td></tr>";
 	echo "<tr><td>City: " . $row['city'] . "</td><td>State: " . $row['state'] . "</td></tr>";
 	echo "<tr><td>Creature Type: </td><td>" . $row3['name'] . "</td></tr>";
-	echo "<tr><td>Experience:</td><td>";
-	echo wordwrap($row['experience'] . "</td></tr>",50,"<br />\n",TRUE);
-	echo "<tr><td>Actions:</td><td>";
-	echo wordwrap($row['action'] . "</td></tr>",50,"<br />\n",TRUE);
+	echo "<tr><td colspan=2><center><a href=sightingViewer.php?id=" . $row['id'] . ">More Information</a></center></td></tr>";
 	echo "</table>";
 	echo"<hr/>";
     }
