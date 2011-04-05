@@ -45,6 +45,14 @@ echo"<br/><hr/>";
     {
     	$equipId = $row['id'];
 	echo"<table>";
+	
+	if (isset($row['pic'])){ ?>
+		<p><img src='<?php echo $row['pic'] ?>' height="25%" width="25%" /></p>
+	<?php 
+	}
+	else{ ?>
+		<p><img src='http://localhost/theSupernatural/equipmentPictures/default.jpg' height="25%" width="25%" /></p>
+	<?php }
     echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\"></td></tr>";
 	echo "<tr><td>Description:</td><td>";
 	echo wordwrap($row['description'] . "</td></tr>",45,"<br />\n",TRUE);
