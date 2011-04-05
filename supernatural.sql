@@ -172,3 +172,24 @@ INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
 --
 -- Dumping data for table `users`
 --
+-- Blog Stuff
+--
+CREATE TABLE IF NOT EXISTS `blogposts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL default '',
+  `post` blob NOT NULL,
+  `author_id` int(11) NOT NULL default '0',
+  `date_posted` date NOT NULL default '0000-00-00',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `blog_posts`
+--
+
+INSERT INTO `blogposts` (`id`, `title`, `post`, `author_id`, `date_posted`) VALUES
+(1, 'My First Blog Post!', 'This is my first post on my new simple blog!', 2, '2008-10-17'),
+(2, 'Web design!', 'This post is all about web design! I love web design!', 2, '2008-10-17'),
+(3, 'The Importance of UX', 'This post is all about user experience and how important it is while designing for the web.', 2, '2008-10-18');
+
+-- --------------------------------------------------------

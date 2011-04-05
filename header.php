@@ -40,6 +40,7 @@ include('cookie.php');
 					<li><a href="creature.php">Creatures</a></li>
 					<li><a href="equipList.php">Equipment</a></li>
 					<li><a href="list.php">Sightings</a></li>
+					<li><a href="blog.php">Blog</a></li>
 					
 					<?php
 					
