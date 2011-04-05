@@ -11,14 +11,6 @@ if($name == "") {
 exit;  
 }
 //This is where the picture stuff starts, so if it messes up then this is what you can get rid of
-
-//include "db_connect.php";
-//maybe don't need this, but if so just uncomment it
-//$username=$_SESSION['username'];
-//$getId="SELECT * FROM users WHERE username='$_SESSION[username]'";
-//$result=mysqli_query($db, $getId);
-//$row = mysqli_fetch_array($result);
-//$id=$row['id'];
 //define a maximum size for the uploaded images in Kb
 define ("MAX_SIZE","1000"); 
 //This function reads the extension of the file. It is used to determine if the file is an image by checking the extension.
@@ -82,8 +74,7 @@ function getExtension($str) {
 				$errors=1;
 			}
 		}
-	//}
-}
+	}
 //If no errors registered, print the success message
 //if(isset($_POST['Submit'])&&!$errors){
 	//header('Location: editAccount.php?msg=picUploaded');
