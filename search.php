@@ -60,7 +60,7 @@ $filter = mysqli_real_escape_string($db, trim($_POST['drop']));
 			} else echo "<option value=5>by City</option>";
 		if ($filter==6){
 			echo "<option value=6 selected>by State</option>";
-			} else echo "<option value=>by State</option>";
+			} else echo "<option value=6>by State</option>";
 		if ($filter==7){
 			echo "<option value=7 selected>by Experience</option>";
 			} else echo "<option value=7>by Experience</option>";
@@ -197,9 +197,11 @@ if ($filter ==1 || ($filter > 9 && $filter <15)) {
 				or die("Error Querying Database");
 		}
 	
+	
+	
 	while($row= mysqli_fetch_array($result)){
 
-		
+		//
 	
 		echo"<table>";
 		echo "CREATURE<br />";
