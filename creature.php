@@ -69,7 +69,7 @@ include "db_connect.php";
 					?>
 					</div>
 					<p>Select a picture of the creature: <input name="image" type="file" /><p>
-					<!--and photo stuff ends here-->
+		<!--and photo stuff ends here-->
 		</td><tr>
 		<tr><td>
 		<input type="hidden" id="submityn" name="submityn" value="y" />
