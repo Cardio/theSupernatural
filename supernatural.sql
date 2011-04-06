@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS `creatureBio` (
   `name` varchar(12) NOT NULL,
   `food` varchar(50) NOT NULL,
   `locale` varchar(50) NOT NULL,
-  `weakness` blob NOT NULL,
-  `powers` blob NOT NULL,
+  `weakness` longtext NOT NULL,
+  `powers` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 --
@@ -94,8 +94,8 @@ CREATE TABLE IF NOT EXISTS `sightings` (
   `date` date NOT NULL,
   `city` varchar(50) NOT NULL default 'Not Listed',
   `state` varchar(2) NOT NULL,
-  `experience` blob NOT NULL,
-  `action` blob NOT NULL,
+  `experience` longtext NOT NULL,
+  `action` longtext NOT NULL,
   PRIMARY KEY (`id`),
   INDEX (`name`, `date`, `city`, `state`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -143,7 +143,7 @@ INSERT INTO `creatureToSight` (`sightingId`, `creatureId`) VALUES
 CREATE TABLE IF NOT EXISTS `equipment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL default 'John Doe',
-  `description` blob NOT NULL,
+  `description` longtext NOT NULL,
   `rating` int(5) NOT NULL,
   `pic` blob,
   PRIMARY KEY (`id`),
