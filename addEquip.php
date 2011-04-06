@@ -67,7 +67,6 @@ session_start();
 					}
 					?>
 					</div>
-					<form enctype="multipart/form-data" action="picUploadController.php" method="post">
 					<p>Select a picture of the equipment: <input name="image" type="file" /><p>
 					<!--and photo stuff ends here-->
 					<td></td></tr>

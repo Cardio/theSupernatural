@@ -37,7 +37,7 @@ include "db_connect.php";
 		if($view=='y'){
 		?> 
 		<br/>
-		<form method="post" action="creature.php">
+		<form enctype="multipart/form-data" method="post" action="creatureController.php">
 		<table>
 		<tr><td>
 		<select name="creature">
@@ -51,6 +51,25 @@ include "db_connect.php";
 			echo "<option value=\"All\"> Display All</option>";
 			?>
 		</select>
+		<!--photo upload starts here, so if it effs it up then this is what you fix-->
+					<div class="error">
+					<?php
+					if($_GET['msg']=='picUploaded') {
+						echo "<p>Equipment Picture Successfully Changed!<p>";
+					}
+					if($_GET['msg']=='copyUnsuccessful') {
+						echo "<p>Copy Unsuccessful. Please Try Again.<p>";
+					}
+					if($_GET['msg']=='size') {
+						echo "<p>Size Limit Exceeded. Please Try Again.<p>";
+					}
+					if($_GET['msg']=='extension') {
+						echo "<p>Incorrect Image Format. Please Try Again.<p>";
+					}
+					?>
+					</div>
+					<p>Select a picture of the creature: <input name="image" type="file" /><p>
+					<!--and photo stuff ends here-->
 		</td><tr>
 		<tr><td>
 		<input type="hidden" id="submityn" name="submityn" value="y" />
