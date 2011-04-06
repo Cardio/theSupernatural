@@ -98,17 +98,13 @@ session_start();
 					
 					<tr><td>Type of Supernatural Creature </td>
 					<td><select name="creature">
-						<option value="Zombie">Zombie</option>
-						<option value="Unicorn">Unicorn</option>
-						<option value="Leprechaun">Leprechaun</option>
-						<option value="Panda">Panda</option>
-						<option value="Demon">Demon</option>
-						<option value="Ghost">Ghost</option>
-						<option value="Medusa">Medusa</option>
-						<option value="Vampire">Vampire</option>
-						<option value="Troll">Troll</option>
-						<option value="Pikachu">Pikachu</option>
-						<option value="Other">Other</option></select></td></tr>
+					<?php
+						$query ="SELECT * FROM creatureBio";
+						$result = mysqli_query($db, $query)or die("Error Querying Database");
+						while($row = mysqli_fetch_array($result)){
+							$name=$row['name'];
+						echo "<option value=". $name . ">". $name ."</option>";
+						} ?>
 					<tr><td></td>
 					<tr><td>The Creatures Actions</td><td><input type="text" name="action" size="50" value="Describe the Creatures Activities."/></td></tr>
 					<td><input type="submit" value="Submit" /> </td></tr>
