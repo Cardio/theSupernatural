@@ -37,7 +37,7 @@ include "db_connect.php";
 		if($view=='y'){
 		?> 
 		<br/>
-		<form enctype="multipart/form-data" method="post" action="creatureController.php">
+		<form method="post" action="creature.php">
 		<table>
 		<tr><td>
 		<select name="creature">
@@ -51,6 +51,25 @@ include "db_connect.php";
 			echo "<option value=\"All\"> Display All</option>";
 			?>
 		</select>
+		</td><tr>
+		<tr><td>
+		<input type="hidden" id="submityn" name="submityn" value="y" />
+		<input type="submit" value="Submit" />
+		</td></tr></table>
+		</form>
+		
+		
+		<?php	
+ }
+ if($view=='n'){
+ ?>
+<form enctype="multipart/form-data" method="post" action="creatureController.php">
+<table>
+<tr><td>Name:</td><td><input type="text" name="name" size="50" value="Insert The Creature's Name Here."/></td></tr>
+<tr><td>Food:</td><td><input type="text" name="food" size="50" value="Insert The Creature's Diet Here."/></td></tr>
+<tr><td>Locale:</td><td><input type="text" name="locale" size="50" value="Insert The Creature's General Wear-abouts Here."/></td></tr>
+<tr><td>Weakness:</td><td><input type="text" name="weakness" size="50" value="Insert The Creature's Weakness's Here."/></td></tr>				
+<tr><td>Powers:</td><td><input type="text" name="powers" size="50" value="Insert The Creature's Powers Here."/></td></tr>
 		<!--photo upload starts here, so if it effs it up then this is what you fix-->
 					<div class="error">
 					<?php
@@ -70,25 +89,6 @@ include "db_connect.php";
 					</div>
 					<p>Select a picture of the creature: <input name="image" type="file" /><p>
 		<!--and photo stuff ends here-->
-		</td><tr>
-		<tr><td>
-		<input type="hidden" id="submityn" name="submityn" value="y" />
-		<input type="submit" value="Submit" />
-		</td></tr></table>
-		</form>
-		
-		
-		<?php	
- }
- if($view=='n'){
- ?>
-<form method="post" action="creatureController.php">
-<table>
-<tr><td>Name:</td><td><input type="text" name="name" size="50" value="Insert The Creature's Name Here."/></td></tr>
-<tr><td>Food:</td><td><input type="text" name="food" size="50" value="Insert The Creature's Diet Here."/></td></tr>
-<tr><td>Locale:</td><td><input type="text" name="locale" size="50" value="Insert The Creature's General Wear-abouts Here."/></td></tr>
-<tr><td>Weakness:</td><td><input type="text" name="weakness" size="50" value="Insert The Creature's Weakness's Here."/></td></tr>				
-<tr><td>Powers:</td><td><input type="text" name="powers" size="50" value="Insert The Creature's Powers Here."/></td></tr>
 <tr><td><input type="submit" value="Submit" /> </td></tr>
 </table>
 </form>
@@ -113,6 +113,22 @@ echo"<br/><hr/>";
    while($row = mysqli_fetch_array($result))
     {
 	echo"<table>";
+
+	if ($row['pic']==""){ ?>
+	    <p><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></p>
+		<p>pic is: <?php echo $row['pic'] ?></p>
+	<?php 
+	}
+	elseif (isset($row['pic'])){ ?>
+		<p><img src='<?php echo $row['pic'] ?>' height="25%" width="25%" /></p>
+		<p>pic is: <?php echo $row['pic'] ?></p>
+	<?php
+	}
+	else{ ?>
+		<p><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></p>
+		<p>pic is: <?php echo $row['pic'] ?></p>
+	<?php }
+
     echo "<tr><td width=\"35%\">Name: </td><td>" . $row['name'] . "</td></tr>";
 	echo "<tr><td>Food Preference: </td><td>" . $row['food'] . "</td></tr>";
 	echo "<td>General Location: </td><td>" . $row['locale'] . "</td></tr>";
