@@ -44,11 +44,11 @@ echo"<br/><hr/>";
    while($row = mysqli_fetch_array($result))
     {
         $sid=$row['id'];
-        $query="SELECT * FROM creatureToSight WHERE sightingId='$sid'";
-        $result1= mysqli_query($db, $query)or die("Error Querying Database");
-        $row2= mysqli_fetch_array($result1);
-        $cid=$row2['creatureId'];
-        $query2="SELECT * FROM creatureBio WHERE id='$cid'";
+        //$query="SELECT * FROM creatureToSight WHERE sightingId='$sid'";
+        //$result1= mysqli_query($db, $query)or die("Error Querying Database");
+        //$row2= mysqli_fetch_array($result1);
+        //$cid=$row2['creatureId'];
+        $query2="SELECT * FROM creatureBio WHERE id=(SELECT creatureId FROM creatureToSight WHERE sightingId='$sid')";
         $result2= mysqli_query($db, $query2)or die("Error Querying Database");
         $row3= mysqli_fetch_array($result2);
 
