@@ -37,7 +37,7 @@ include('cookie.php');
 				
 					<!-- MENU -->
 					<li><a href="index.php">Home</a></li>
-					<li><a href="creature.php">Creatures</a></li>
+					<li><a href="creature.php">Creatures</a></li>			
 					<li><a href="equipList.php">Equipment</a></li>
 					<li><a href="list.php">Sightings</a></li>
 					<li><a href="forumviewer.php">Forum</a></li>
@@ -69,3 +69,6 @@ include('cookie.php');
 
 </body>
 </html>
+
+
+

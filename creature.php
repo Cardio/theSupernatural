@@ -14,7 +14,7 @@ session_start();
 <body>
 <?php
    include('header.php');
-
+include "db_connect.php";  
 
 ?>
 
@@ -27,37 +27,61 @@ session_start();
 				
 					<!-- CONTENT -->
 					<h3>Creature Bio</h3>
-					<div class="leftimg"><img src="images/monsters.jpg" width=175px height=200px /></div>
-		<br/><br/><br/>			
+			
+		<div><a href="creature.php?view=y"><img src="images/view.png" width=550px height=70px border="0"/></a></div>
+		<div><a href="creature.php?view=n"><img src="images/create.png" width=550px height=70px border="0"/></a></div>		
+		
+		<?php
+		$view=$_GET['view'];
+		//echo "View is readable: " .$view ;
+		if($view=='y'){
+		?> 
+		<br/>
 		<form method="post" action="creature.php">
 		<table>
 		<tr><td>
 		<select name="creature">
-			<option value="Zombie">Zombie</option>
-			<option value="Unicorn">Unicorn</option>
-			<option value="Leprechaun">Leprechaun</option>
-			<option value="Panda">Panda</option>
-			<option value="Demon">Demon</option>
-			<option value="Ghost">Ghost</option>
-			<option value="Medusa">Medusa</option>
-			<option value="Vampire">Vampire</option>
-			<option value="Troll">Troll</option>
-			<option value="Pikachu">Pikachu</option>
-			<option value="All"> Display All</option>
+		<?php
+			$query ="SELECT * FROM creatureBio";
+			$result = mysqli_query($db, $query)or die("Error Querying Database");
+			while($row = mysqli_fetch_array($result)){
+			$name=$row['name'];
+			echo "<option value=". $name . ">". $name ."</option>";
+			}
+			echo "<option value=\"All\"> Display All</option>";
+			?>
 		</select>
 		</td><tr>
 		<tr><td>
-		<input type="submit" value="Submit" />
 		<input type="hidden" id="submityn" name="submityn" value="y" />
+		<input type="submit" value="Submit" />
 		</td></tr></table>
 		</form>
-		<br/><br/><br/>
-				
+		
+		
 		<?php	
-include "db_connect.php";   
+ }
+ if($view=='n'){
+ ?>
+<form method="post" action="creatureController.php">
+<table>
+<tr><td>Name:</td><td><input type="text" name="name" size="50" value="Insert The Creature's Name Here."/></td></tr>
+<tr><td>Food:</td><td><input type="text" name="food" size="50" value="Insert The Creature's Diet Here."/></td></tr>
+<tr><td>Locale:</td><td><input type="text" name="locale" size="50" value="Insert The Creature's General Wear-abouts Here."/></td></tr>
+<tr><td>Weakness:</td><td><input type="text" name="weakness" size="50" value="Insert The Creature's Weakness's Here."/></td></tr>				
+<tr><td>Powers:</td><td><input type="text" name="powers" size="50" value="Insert The Creature's Powers Here."/></td></tr>
+<tr><td><input type="submit" value="Submit" /> </td></tr>
+</table>
+</form>
+<?php
+ }
+ $add=$_GET['add'];
+ if($add<>NULL){
+ $submit='y';
+ }
 $ctype = $_POST['creature'];
 $submit= $_POST['submityn'];
-
+//echo $submit;
 if($submit=='y'){
 	
 if($ctype<>'All'){
@@ -112,8 +136,8 @@ echo"<br/><hr/>";
     }
 echo "</table>";
 mysqli_close($db);
-}
 
+}
 ?>
 
 
