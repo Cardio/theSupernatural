@@ -152,9 +152,13 @@ if($name != "" && $name != "id=searchq") {
 	
 if ($filter ==1 || $filter==2) {
 	while($row= mysqli_fetch_array($result)){
+	
+		$user=$row['id'];
+		$link = "/thesupernatural/profile.php?id=$user";
 		echo"<table>";
 		echo "USER<br />";
-		echo "<tr><td width=\"35%\">Name: " . $row['username'] . "</td><td width=\"65%\"><br />";
+		echo "<tr><td width=\"35%\">Name: " . "<a href=$link>" 
+		 . $row['username'] . "</a></td><td width=\"65%\"><br />";
 		echo "</table>";
 		echo"<hr/>";
 		}
