@@ -116,17 +116,14 @@ echo"<br/><hr/>";
 
 	if ($row['pic']==""){ ?>
 	    <p><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></p>
-		<p>pic is: <?php echo $row['pic'] ?></p>
 	<?php 
 	}
 	elseif (isset($row['pic'])){ ?>
 		<p><img src='<?php echo $row['pic'] ?>' height="25%" width="25%" /></p>
-		<p>pic is: <?php echo $row['pic'] ?></p>
 	<?php
 	}
 	else{ ?>
 		<p><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></p>
-		<p>pic is: <?php echo $row['pic'] ?></p>
 	<?php }
 
     echo "<tr><td width=\"35%\">Name: </td><td>" . $row['name'] . "</td></tr>";
