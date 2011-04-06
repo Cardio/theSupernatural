@@ -38,16 +38,29 @@ $result = mysqli_query($db, $query)or die("Error Querying Database");
  
 
    while($row = mysqli_fetch_array($result))
-    {echo"<table>";
+    {
+	echo"<table>";
 	$title=$row['title'];
 	$id=$row['id'];
 	//echo $title;
-	echo "<tr><td><a href=\"forum.php?index=";
+	echo "<tr><td width=\"35%\"><a href=\"forum.php?index=";
 	echo $id;
 	echo "\">";
     echo $title;
-	echo "</a><br/></td></tr>";
+	echo "</a><br/></td>";
+	
+	echo "<td width=\"35%\"> Date Created:" . $row['date_posted'] . "</td></tr>";
+	$query2= "SELECT * FROM users WHERE id='$row[author_id]'";
+	$result1 = mysqli_query($db, $query2)or die("Error Querying Database");
+	$row1 = mysqli_fetch_array($result1);
+	$author=$row1['username'];
+	echo "<tr><td></td><td>Created By:" . $author . "</td></tr>";
+	//$query2= "SELECT COUNT(postID) FROM threadToPost WHERE threadId='$id'";
+	//$result = mysqli_query($db, $query)or die("Error Querying Database");
+	//$row1 = mysqli_fetch_array($result);
+	//echo "<td width=\"35%\"> Total Posts:" .$row1  . "</td></tr>";
     echo "<hr /></table>";
+	
 	}
 	
 

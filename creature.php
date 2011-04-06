@@ -75,10 +75,7 @@ include "db_connect.php";
 </form>
 <?php
  }
- $add=$_GET['add'];
- if($add<>NULL){
- $submit='y';
- }
+
 $ctype = $_POST['creature'];
 $submit= $_POST['submityn'];
 //echo $submit;

@@ -45,6 +45,38 @@ include('header.php');
 <br/>
 					
 				<center><iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/BvsMPOfblfg" frameborder="0" allowfullscreen></iframe></center>
+				
+<?php
+include ('db_connect.php');	
+echo "<hr /> <br/><h3> NewsFeed/Recent Sightings </h3>";
+$query = "SELECT * FROM sightings ORDER BY date DESC LIMIT 5";
+$result = mysqli_query($db, $query)or die("Error Querying Database");
+//$row=mysqli_fetch_array($result); 
+//$sid=$row['id'];  
+echo"<br/><hr/>";
+   while($row = mysqli_fetch_array($result))
+    {
+	$sid=$row['id'];
+	$query="SELECT * FROM creatureToSight WHERE sightingId='$sid'";
+	$result1= mysqli_query($db, $query)or die("Error Querying Database");
+	$row2= mysqli_fetch_array($result1);
+	$cid=$row2['creatureId'];
+	$query2="SELECT * FROM creatureBio WHERE id='$cid'";
+	$result2= mysqli_query($db, $query2)or die("Error Querying Database");
+	$row3= mysqli_fetch_array($result2);
+	
+	echo"<table>";
+    echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\">Date:" . $row['date'] . "</td></tr>";
+	echo "<tr><td>City: " . $row['city'] . "</td><td>State: " . $row['state'] . "</td></tr>";
+	echo "<tr><td>Creature Type: </td><td>" . $row3['name'] . "</td></tr>";
+	echo "<tr><td colspan=2><center><a href=sightingViewer.php?id=" . $row['id'] . ">More Information</a></center></td></tr>";
+	echo "</table>";
+	echo"<hr/>";
+    }				
+mysqli_close($db);					
+?>					
+					
+					
 					<!-- END CONTENT -->
 					
 				</div>
