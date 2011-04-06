@@ -6,7 +6,7 @@ session_start();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Supernatural Sightings</title>
+<title>Supernatural Forum</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -24,7 +24,8 @@ session_start();
 				<div class="content">
 				
 <!--Content -->
-
+<h3>Supernatural Forum </h3>
+<br/>
 <?php
 include ('db_connect.php');
 
@@ -48,10 +49,30 @@ $result = mysqli_query($db, $query)or die("Error Querying Database");
 	echo "</a><br/></td></tr>";
     echo "<hr /></table>";
 	}
+	
 
 mysqli_close($db);
 }
-?></div>	
+?>
+<hr /><br />
+<center><a href="forumviewer.php?makeNew=y">Create New Thread</a></center>
+<?php 
+$makeNew=$_GET['makeNew'];
+if($makeNew=='y'){
+?>
+<form method="post" action="threadController.php">
+<table>
+<tr><td>Date</td><td><input type="number" name="month" min="1" max="12" step="1" value="<?php echo date("m", time()); ?>" size="3"/>
+<input type="number" name="day" min="1" max="31" step="1" value="<?php echo date("d", time()); ?>" size="3"/>
+<input type="number" name="year" min="1900" max="2014" step="1" value="<?php echo date("Y", time()); ?>" size="4"/></td></tr>				
+<tr><td>Title</td><td><input type="text" name="title" size="50" value="Insert Your Title Here."/></td></tr>
+<tr><td>Post</td><td><input type="text" name="post" size="50" value="Insert Your Post Here."/></td></tr>
+<td><input type="hidden" name=threadid value="<?php echo $threadid; ?>"><input type="submit" value="Submit" /> </td></tr>
+</table>
+</form>
+<?php
+} ?>
+</div>	
 <?php
     include('SIDEnFOOTER.html');
 ?>

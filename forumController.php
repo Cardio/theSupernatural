@@ -10,6 +10,7 @@ $month = $_POST['month'];
 $day = $_POST['day'];
 $yr = $_POST['year'];
 $date = $yr . '-' . $month . '-' . $day;
+//$date = date("m", time());
 
 //$title = mysqli_real_escape_string($db, trim($_POST['title']));
 $post = mysqli_real_escape_string($db, trim($_POST['post']));
