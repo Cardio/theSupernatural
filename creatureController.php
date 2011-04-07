@@ -73,7 +73,7 @@ $food = $_POST['food'];
 $weakness = $_POST['weakness'];
 $powers = $_POST['powers'];
 
-$query="INSERT INTO creatureBio (name, food, locale, weakness, powers, pic) VALUES ('$name', '$locale', '$food', '$weakness', '$powers', '$pictureUrl')";
+$query="INSERT INTO creatureBio (name, food, locale, weakness, powers, pic) VALUES ('$name', '$food', '$locale', '$weakness', '$powers', '$pictureUrl')";
 $result = mysqli_query($db, $query)or die("Error Querying Database");
 
 mysqli_close($db);   
