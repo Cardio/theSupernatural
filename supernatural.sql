@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `creatureBio` (
   `locale` varchar(50) NOT NULL,
   `weakness` longtext NOT NULL,
   `powers` longtext NOT NULL,
+  `pic` blob,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 --
