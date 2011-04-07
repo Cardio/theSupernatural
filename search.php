@@ -121,7 +121,7 @@ if($name != "" && $name != "id=searchq") {
 	}elseif ($filter==7){
 		$query="SELECT * FROM sightings WHERE experience LIKE '%$name%'";
 	}elseif ($filter==8){
-		$query="SELECT * FROM sightings WHERE creature_type LIKE '%$name%'";
+		$query="SELECT * FROM sightings WHERE id IN (SELECT sightingId FROM creatureToSight where creatureId IN (SELECT id FROM creaturebio WHERE name LIKE '%$name%'))";
 	}elseif ($filter==9){
 		$query="SELECT * FROM sightings WHERE action LIKE '%$name%'";
 	}elseif ($filter==10){
@@ -169,26 +169,31 @@ if ( $filter ==1 || $filter > 2 && $filter <10) {
 	if($filter==1){
 		$query="SELECT * FROM sightings WHERE name LIKE '%$name%' OR date LIKE '%$name%'
 			OR city LIKE '%$name%' OR state LIKE '%$name%' OR experience LIKE '%$name%' 
-			OR creature_type LIKE '%$name%' OR action LIKE '%$name%'";
+			OR id IN (SELECT sightingId FROM creatureToSight where creatureId IN (SELECT id FROM creaturebio WHERE name LIKE '%$name%')) OR action LIKE '%$name%'";
 
 		$result=mysqli_query($db, $query)
-			or die("Error Querying Database");
+			or die("Error Querying Database1");
 	}
 	
 	while($row= mysqli_fetch_array($result)){
 	
+		$sid=$row['id'];
+	$query="SELECT * FROM creatureToSight WHERE sightingId='$sid'";
+	$result1= mysqli_query($db, $query)or die("Error Querying Database");
+	$row2= mysqli_fetch_array($result1);
+	$cid=$row2['creatureId'];
+	$query2="SELECT * FROM creatureBio WHERE id='$cid'";
+	$result2= mysqli_query($db, $query2)or die("Error Querying Database");
+	$row3= mysqli_fetch_array($result2);
 	
-		echo"<table>";
-		echo "SIGHTING<br />";
-		echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\">Date: " . $row['date'] . "</td></tr>";
-		echo "<tr><td>City:    " . $row['city'] . "</td><td>State:    " . $row['state'] . "</td></tr>";
-		echo "<tr><td>Creature Type:    " . $row['creature_type'] . "</td></tr>";
-		echo "<tr><td>Experience:    </td><td>";
-		echo wordwrap($row['experience'] . "</td></tr>",50,"<br />\n",TRUE);
-		echo "<tr><td>Actions:    </td><td>";
-		echo wordwrap($row['action'] . "</td></tr>",50,"<br />\n",TRUE);
-		echo "</table>";
-		echo"<hr/>";
+	echo"<table>";
+	echo "SIGHTING<br />";
+    echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\">Date:" . $row['date'] . "</td></tr>";
+	echo "<tr><td>City: " . $row['city'] . "</td><td>State: " . $row['state'] . "</td></tr>";
+	echo "<tr><td>Creature Type: </td><td>" . $row3['name'] . "</td></tr>";
+	echo "<tr><td colspan=2><center><a href=sightingViewer.php?id=" . $row['id'] . ">More Information</a></center></td></tr>";
+	echo "</table>";
+	echo"<hr/>";
 	}
 }	
 
@@ -210,8 +215,8 @@ if ($filter ==1 || ($filter > 9 && $filter <15)) {
 		echo"<table>";
 		echo "CREATURE<br />";
 		echo "<tr><td width=\"35%\">Creature: " . $row['name'] . "</td><td width=\"65%\">Diet: " . $row['food'] . "</td></tr>";
-		echo "<tr><td>Location:    " . $row['locale'] . "</td><td>Powers:    " . $row['powers'] . "</td></tr>";
-		echo "<tr><td>Weakness:    " . $row['weakness'] . "</td></tr>";
+		echo "<tr><td>Location:    " . $row['locale'] . "</td></tr><tr><td colspan=2>Powers:    " . $row['powers'] . "</td></tr>";
+		echo "<tr><td colspan=2>Weakness:    " . $row['weakness'] . "</td></tr>";
 		echo "</table>";
 		echo"<hr/>";
     
@@ -230,8 +235,8 @@ if ($filter ==1 || $filter  > 14) {
 	while($row= mysqli_fetch_array($result)){
 		echo"<table>";
 		echo "EQUIPMENT<br />";
-		echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\">Description: " . $row['description'] . "</td></tr>";
-		echo "<tr><td>Rating:    " . $row['rating'] . "</td>";
+		echo "<tr><td>Name: " . $row['name'] . "</td><td>Rating:    " . $row['rating'] . "</td></tr>";
+		echo "<tr><td colspan=2>Description: " . $row['description'] . "</td></tr>";
 		echo "</table>";
 		echo"<hr/>";
 	}
