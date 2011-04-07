@@ -47,7 +47,7 @@ echo"<br/><hr/>";
 	echo"<table>";
 	
 	if ($row['pic']==""){ ?>
-	    <center><img src='http://localhost/theSupernatural/equipmentPictures/default.jpg' height="25%" width="25%" /></center>
+	    <center><img src='http://localhost/theSupernatural/equipmentPictures/sign.jpg' height="25%" width="25%" /></center>
 	<?php 
 	}
 	elseif (isset($row['pic'])){ ?>
@@ -56,7 +56,7 @@ echo"<br/><hr/>";
 	<?php
 	}
 	else{ ?>
-		<center><img src='http://localhost/theSupernatural/equipmentPictures/default.jpg' height="25%" width="25%" /></center>
+		<center><img src='http://localhost/theSupernatural/equipmentPictures/sign.jpg' height="25%" width="25%" /></center>
 	<?php }
     echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\"></td></tr>";
 	echo "<tr><td>Description:</td><td>";
