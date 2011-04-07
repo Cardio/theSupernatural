@@ -74,7 +74,7 @@ include "db_connect.php";
 					<div class="error">
 					<?php
 					if($_GET['msg']=='picUploaded') {
-						echo "<p>Equipment Picture Successfully Changed!<p>";
+						echo "<p>Creature Picture Successfully Changed!<p>";
 					}
 					if($_GET['msg']=='copyUnsuccessful') {
 						echo "<p>Copy Unsuccessful. Please Try Again.<p>";
@@ -87,7 +87,7 @@ include "db_connect.php";
 					}
 					?>
 					</div>
-					<p>Select a picture of the creature: <input name="image" type="file" /><p>
+					<tr><td>Picture:</td><td> <input name="image" type="file" /></td></tr>
 		<!--and photo stuff ends here-->
 <tr><td><input type="submit" value="Submit" /> </td></tr>
 </table>
@@ -115,15 +115,15 @@ echo"<br/><hr/>";
 	echo"<table>";
 
 	if ($row['pic']==""){ ?>
-	    <p><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></p>
+	    <center><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></center>
 	<?php 
 	}
 	elseif (isset($row['pic'])){ ?>
-		<p><img src='<?php echo $row['pic'] ?>' height="25%" width="25%" /></p>
+		<center><img src='<?php echo $row['pic'] ?>' height="25%" width="25%" /></center>
 	<?php
 	}
 	else{ ?>
-		<p><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></p>
+		<center><img src='http://localhost/theSupernatural/creaturePictures/default.jpg' height="25%" width="25%" /></center>
 	<?php }
 
     echo "<tr><td width=\"35%\">Name: </td><td>" . $row['name'] . "</td></tr>";

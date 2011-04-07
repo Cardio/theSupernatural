@@ -64,26 +64,26 @@ CREATE TABLE IF NOT EXISTS `creatureBio` (
 --
 -- 
 --
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(1, 'Zombie', 'Brains', 'Viral outbreak', 'Zombies true weakness is damage to the brain. You can take them with one blow to the head, or a single headshot!', 'Zombites don\'t really have any powers but they thrive in hurting anything but the brain doesn\'t seem to effect them.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(2, 'Unicorn', 'Candy', 'Candy Mountain', 'Blennophobia which is the fear of SLIME!', 'Unicorns are abudant sources of cheerfulness, they are always smiling and being happy.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(3, 'Leprechaun', 'Meat and Potatoes', 'Ireland', 'Leprechauns are always wearing their beer goggles. Sit \'em at a bar, and they will soon be falling down. It also serves as a great distraction', 'Though alcohol may be weakness, it is also a strength. Leprechauns can consume large quantities of alcohol, after all they are Irish!');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(4, 'Panda', 'Bamboo', 'China', 'Pandas can eat and eat and eat, so their general weakness is gluttony.', 'Pandas are sooooooo cuddly and soft, this often serves as a weakness for predators.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(5, 'Demon', 'Innocent Souls', 'HELL', 'Cheer: Demons CANNOT stand cheerfullness; they immediately burst into flame when surrounded by happiness.', 'Demons are full of anger, and are relentless.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(6, 'Ghost', 'Not Applicable', 'Everywhere', 'Being Inmaterial', 'Ghosts good or bad are known for their relentless haunting.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(7, 'Medusa', 'Human Souls', 'The Lair', 'The only way to defeat Medusa is to behead her.', 'One foul look into the eyes of Medusa turns you into stone. Do not be lured in by her beauty.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(8, 'Vampire', 'Blood', 'Translyvania', 'Vampires have multiple weaknesses in the event that you get close enough to them. The cannot ingest garlic, and they cannot endure UV rays. Also a wooden stake to the heart immediately results in DEATH.', 'Vampires are fast and immortal, so killing them is difficult.');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(9, 'Troll', 'Limbs', 'In the Mountain', 'Not Applicable', 'Not Applicable');
-INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
-(10, 'Pikachu', 'Poke-Food', 'PokeBall', 'Rock-type Attacks', 'Electric-type attacks');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(1, 'Zombie', 'Brains', 'Viral outbreak', 'Zombies true weakness is damage to the brain. You can take them with one blow to the head, or a single headshot!', 'Zombies don\'t really have any powers but they thrive in hurting anything but the brain doesn\'t seem to effect them.','http://localhost/theSupernatural/creaturePictures/zombie.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(2, 'Unicorn', 'Candy', 'Candy Mountain', 'Blennophobia which is the fear of SLIME!', 'Unicorns are abudant sources of cheerfulness, they are always smiling and being happy.','http://localhost/theSupernatural/creaturePictures/unicorn.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(3, 'Leprechaun', 'Meat and Potatoes', 'Ireland', 'Leprechauns are always wearing their beer goggles. Sit \'em at a bar, and they will soon be falling down. It also serves as a great distraction', 'Though alcohol may be weakness, it is also a strength. Leprechauns can consume large quantities of alcohol, after all they are Irish!','http://localhost/theSupernatural/creaturePictures/leprechaun.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(4, 'Panda', 'Bamboo', 'China', 'Pandas can eat and eat and eat, so their general weakness is gluttony.', 'Pandas are sooooooo cuddly and soft, this often serves as a weakness for predators.','http://localhost/theSupernatural/creaturePictures/panda.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(5, 'Demon', 'Innocent Souls', 'HELL', 'Cheer: Demons CANNOT stand cheerfullness; they immediately burst into flame when surrounded by happiness.', 'Demons are full of anger, and are relentless.','http://localhost/theSupernatural/creaturePictures/demon.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(6, 'Ghost', 'Not Applicable', 'Everywhere', 'Being Inmaterial', 'Ghosts good or bad are known for their relentless haunting.','http://localhost/theSupernatural/creaturePictures/ghost.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(7, 'Medusa', 'Human Souls', 'The Lair', 'The only way to defeat Medusa is to behead her.', 'One foul look into the eyes of Medusa turns you into stone. Do not be lured in by her beauty.','http://localhost/theSupernatural/creaturePictures/medusa.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(8, 'Vampire', 'Blood', 'Translyvania', 'Vampires have multiple weaknesses in the event that you get close enough to them. The cannot ingest garlic, and they cannot endure UV rays. Also a wooden stake to the heart immediately results in DEATH.', 'Vampires are fast and immortal, so killing them is difficult.','http://localhost/theSupernatural/creaturePictures/vampire.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(9, 'Troll', 'Limbs', 'In the Mountain', 'Not Applicable', 'Not Applicable','http://localhost/theSupernatural/creaturePictures/troll.jpg');
+INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`, `pic`) VALUES
+(10, 'Pikachu', 'Poke-Food', 'PokeBall', 'Rock-type Attacks', 'Electric-type attacks','http://localhost/theSupernatural/creaturePictures/pikachu.jpg');
 
 --
 -- Table structure for table `sightings`

@@ -47,16 +47,16 @@ echo"<br/><hr/>";
 	echo"<table>";
 	
 	if ($row['pic']==""){ ?>
-	    <p><img src='http://localhost/theSupernatural/equipmentPictures/default.jpg' height="25%" width="25%" /></p>
+	    <center><img src='http://localhost/theSupernatural/equipmentPictures/default.jpg' height="25%" width="25%" /></center>
 	<?php 
 	}
 	elseif (isset($row['pic'])){ ?>
 	    
-		<p><img src='<?php echo $row['pic'] ?>' height="25%" width="25%" /></p>
+		<center><img src='<?php echo $row['pic'] ?>' height="25%" width="25%" /></center>
 	<?php
 	}
 	else{ ?>
-		<p><img src='http://localhost/theSupernatural/equipmentPictures/default.jpg' height="25%" width="25%" /></p>
+		<center><img src='http://localhost/theSupernatural/equipmentPictures/default.jpg' height="25%" width="25%" /></center>
 	<?php }
     echo "<tr><td width=\"35%\">Name: " . $row['name'] . "</td><td width=\"65%\"></td></tr>";
 	echo "<tr><td>Description:</td><td>";
