@@ -2,16 +2,13 @@
 $root = assist;
 $pw = assist;
 $db = mysqli_connect('localhost',$root,$pw);
-if(!$db)
-die('Connect Error, did you enter the right information?');
+//if(!$db)
+//die('Connect Error, did you enter the right information?');
 mysqli_query($db,"drop DATABASE IF EXISTS supernatural;");
 mysqli_query($db,"create database supernatural");
-
 mysqli_query($db,"CREATE USER 'assist'@'localhost' IDENTIFIED BY 'assist'");
 mysqli_query($db,"GRANT ALL PRIVILEGES ON *.* TO 'assist'@'localhost' WITH GRANT OPTION");
 mysqli_query($db,"use supernatural");
-
-
 mysqli_query($db,"CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(12) NOT NULL,
@@ -23,13 +20,11 @@ mysqli_query($db,"CREATE TABLE IF NOT EXISTS `users` (
   `pic` blob,
   PRIMARY KEY (`id`),
   INDEX (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'taco', '9dc4319c27f6479adc842ebef4a324a40759b95c');
 INSERT INTO `users` (`id`, `username`, `password`, `zipcode`, `firstname`, `lastname`, `bio`)VALUES
 (2, 'AJ', '269b3eef1c991fb8b36ceb07ca9e659a779a7a2c', '22401', 'Amanda', 'Jenkins', 'My name is Amanda Jenkins. I sometimes go by AJ! I am very extroverted. I am a comp sci major at the University of Mary Washington. Also, I spend alot of my free time saving lives, because I am an EMT!!!');
-
 CREATE TABLE IF NOT EXISTS `creatureBio` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(12) NOT NULL,
@@ -38,8 +33,7 @@ CREATE TABLE IF NOT EXISTS `creatureBio` (
   `weakness` blob NOT NULL,
   `powers` blob NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
 (1, 'Zombie', 'Brains', 'Viral outbreak', 'Zombies true weakness is damage to the brain. You can take them with one blow to the head, or a single headshot!', 'Zombites don\'t really have any powers but they thrive in hurting anything but the brain doesn\'t seem to effect them.');
 INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
@@ -60,7 +54,6 @@ INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`)
 (9, 'Troll', 'Limbs', 'In the Mountain', 'Not Applicable', 'Not Applicable');
 INSERT INTO `creatureBio` (`id`, `name`, `food`, `locale`, `weakness`, `powers`) VALUES
 (10, 'Pikachu', 'Poke-Food', 'PokeBall', 'Rock-type Attacks', 'Electric-type attacks');
-
 CREATE TABLE IF NOT EXISTS `sightings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL default 'John Doe',
@@ -71,8 +64,7 @@ CREATE TABLE IF NOT EXISTS `sightings` (
   `action` blob NOT NULL,
   PRIMARY KEY (`id`),
   INDEX (`name`, `date`, `city`, `state`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `sightings` (`id`, `name`, `date`, `city`, `state`, `experience`, `action`) VALUES
 (1, 'AJ', '2011-03-21', 'Fredericksburg', 'VA', 'It was scary, I thought I was going to be turned to stone.', 'I chopped off her head!');
 INSERT INTO `sightings` (`id`, `name`, `date`, `city`, `state`, `experience`, `action`) VALUES
@@ -83,7 +75,6 @@ INSERT INTO `sightings` (`id`, `name`, `date`, `city`, `state`, `experience`, `a
 (4, 'AJ', '2011-03-20', 'Raleigh', 'NC', 'I was at the fair, and there was a stand that said \'Come in and see the REAL snakewoman, half human half snake!\' So I entered. She was beautiful, but scary, and I almost looked  in her eyes, but I saw the statues in the room.', 'I turned away and I ran!');
 INSERT INTO `sightings` (`id`, `name`, `date`, `city`, `state`, `experience`, `action`) VALUES
 (5, 'AJ', '2011-03-20', 'Key West', 'FL', 'I was at a bar, and when I went up to order a drink there was a small man dressed in green who lookedm e and the face and said \'What are you doin in my barrrr?\' I said I was just gettin a drink and told the bartender to make that two, and I gave one to the small man.', 'The Leprechaun was content upon recieveing my offer. And the Guiness was GOOD!!');
-
 CREATE TABLE IF NOT EXISTS `creatureToSight` (
   `sightingId` int(11) NOT NULL, 
   `creatureId` int(2) NOT NULL,
@@ -93,8 +84,7 @@ CREATE TABLE IF NOT EXISTS `creatureToSight` (
   CONSTRAINT creatureBio_creatureId_fk
   FOREIGN KEY (creatureId)
   REFERENCES creatureBio (creatureId)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `creatureToSight` (`sightingId`, `creatureId`) VALUES
 (1,7);
 INSERT INTO `creatureToSight` (`sightingId`, `creatureId`) VALUES
@@ -105,7 +95,6 @@ INSERT INTO `creatureToSight` (`sightingId`, `creatureId`) VALUES
 (4,7);
 INSERT INTO `creatureToSight` (`sightingId`, `creatureId`) VALUES
 (5,3);
-
 CREATE TABLE IF NOT EXISTS `equipment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL default 'John Doe',
@@ -114,11 +103,9 @@ CREATE TABLE IF NOT EXISTS `equipment` (
   `pic` blob,
   PRIMARY KEY (`id`),
   INDEX (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `equipment` (`id`, `name`, `description`, `rating`) VALUES
 (1, 'Duct Tape', 'Use it for anything and everything.  An essential tool for unexpected situations and annoying little siblings.', 5);
-
 CREATE TABLE IF NOT EXISTS `equipToCreature` (
   `equipId` int(11) NOT NULL, 
   `creatureId` int(2) NOT NULL,
@@ -128,8 +115,7 @@ CREATE TABLE IF NOT EXISTS `equipToCreature` (
   CONSTRAINT creatureBio_creatureId_fk
   FOREIGN KEY (creatureId)
   REFERENCES creatureBio (id)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
 (1,1);
 INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
@@ -150,15 +136,13 @@ INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
 (1,9);
 INSERT INTO `equipToCreature` (`equipId`, `creatureId`) VALUES
 (1,10);
-
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `post` blob NOT NULL,
   `author_id` int(11) NOT NULL default '0',
   `date_posted` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=4;
 INSERT INTO `posts` (`id`, `post`, `author_id`, `date_posted`) VALUES
 (1,  'Feel free to comment on the site at as you find things that may need improving or ideas you may have in addition to what we already have! Thanks everyone!', 2, '2011-04-17'),
 (2,  'I think leprechauns can be good. Cuz the Irish are known to be nice people...I\'m still looking for others input.', 2, '2011-04-17'),
@@ -173,14 +157,11 @@ CREATE TABLE IF NOT EXISTS `thread`(
 `author_id` int(11) NOT NULL default '0',
 `date_posted` date NOT NULL default '0000-00-00',
 PRIMARY KEY(`id`)
-)ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
+)ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=4;
 INSERT INTO `thread` (`id`,`title`, `post`, `author_id`, `date_posted`) VALUES
 (1,  'Welcome', 'This is my first post on my new thread! ', 2, '2008-10-17'),
 (2,  'Leprechauns', 'I can\'t believe I saw a real Leprechaun, what have others experienced? Are there such things as happy leprechauns?', 2, '2008-10-17'),
 (3,  'The Dangers of El Paso','I was in El PAso picking up some salsa and every bridge I went over there were Trolls. Can we activate a decon team of some sort? ', 2, '2008-10-18');
-
-
 CREATE TABLE IF NOT EXISTS `threadToPost`(
 `threadId` int(11) NOT NULL, 
 `postId` int(2) NOT NULL,
@@ -190,8 +171,7 @@ CREATE TABLE IF NOT EXISTS `threadToPost`(
   CONSTRAINT posts_postId_fk
   FOREIGN KEY (postId)
   REFERENCES posts (postId)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `threadToPost` (`threadId`, `postId`) VALUES
 (1,1);
 INSERT INTO `threadToPost` (`threadId`, `postId`) VALUES
@@ -207,5 +187,4 @@ INSERT INTO `threadToPost` (`threadId`, `postId`) VALUES
 	rename("create.php","create.bak.php");
 	header("Location: index.php");
 	exit;
-
 ?>
